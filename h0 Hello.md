@@ -12,8 +12,5 @@ Testataan, että kaikki toimii
 Kaikki toimii
 
 ### Otsikko3
-`` 
-Koodinpätkä
-`` 
 
-  sudo apt-get update
+https://www.google.com/
