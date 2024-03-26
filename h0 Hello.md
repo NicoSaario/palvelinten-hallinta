@@ -13,4 +13,5 @@ Kaikki toimii
 
 ### Otsikko3
 
-https://www.google.com/
+Hyvä palauttaa GitHubin säätöjä mieleen:
+https://terokarvinen.com/2023/create-a-web-page-using-github/
