@@ -15,3 +15,5 @@ Kaikki toimii
 `` 
 Koodinpätkä
 `` 
+
+  sudo apt-get update
