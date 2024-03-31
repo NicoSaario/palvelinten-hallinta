@@ -65,6 +65,7 @@ b) GitHub
 
 a) Hello Salt
 Olin asentanut Saltin jo aikaisemmin oppitunnilla ja kokeilin sen toimivuutta Powerhsellillä komennolla
+
   salt-call --local grains.items
 
 ![salt-call](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/45de1c76-a892-4aaa-a602-8a41ea527685)
@@ -75,6 +76,7 @@ b) Hello Vagrant!
 
 
     vagrant status
+  
     vagrant global-status
 
 Vagrantin toimivuuden Windowsin Powrshellillä ja se palautti seuraavat vastaukset:
@@ -93,7 +95,10 @@ Vagrantin toimivuuden Windowsin Powrshellillä ja se palautti seuraavat vastauks
 
 * Saltin asennus
 - Ensin taas peruskomennot
+
+
   sudo apt-get update
+  
   sudo apt-get upgrade
 
 - Sitten asennetaan se (olisin voinut vain tarkistaa sudo salt-call --version - komennolla, onko se olemassa)
@@ -120,6 +125,7 @@ Komennot
 
   
   $ sudo salt-call --local -l info state.single pkg.installed tree
+  
   $ sudo salt-call --local -l info state.single pkg.removed tree
 
 
@@ -131,6 +137,8 @@ Komennot
 
 2) file
 * Komennot
+
+
   $ sudo salt-call --local -l info state.single file.managed /tmp/hellonico
 
   $ sudo salt-call --local -l info state.single file.managed /tmp/moinico contents="foo"
@@ -160,7 +168,9 @@ $ sudo salt-call --local -l info state.single service.dead apache2 enable=False
 ![apache2_service](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/5dcaf9e6-0aee-42da-9848-0cdeb77e2db5)
 
 4) user. present - User Should Exist
-- Komennnot 
+- Komennnot
+
+
   $ sudo salt-call --local -l info state.single user.present nicote10
 
   $ sudo salt-call --local -l info state.single user.absent nicote10
@@ -179,6 +189,8 @@ Absent ![nicote10absent](https://github.com/NicoSaario/palvelinten-hallinta/asse
 
 ### Idempotenssi
 - Suoirin komennon
+
+
   salt-call --local grains.items
 
 - Se tulosti järjestelmän ominaisuuksia ja suorittamalla sen uudestaan, se tekee ihan saman tulosteen uudelleen. Se ei myöskään tee muutoksia järjestelmän tilaan tai kokoonpanoon. Nämä tekevät siitä idempotenssin. Käytin apuna jälleen Gemini - tekoälyä, sillä en ihan täysin ymmärtänyt tehtävänantoa. Komennot kuitenkin suoritin sekä päättelin itse. Teoriapuolessa se oli apuna.
@@ -199,6 +211,8 @@ Absent ![nicote10absent](https://github.com/NicoSaario/palvelinten-hallinta/asse
   sudo salt-call --local grains.item cpu_model
 
 - Näyttää CPU:n
+
+
 ![cpu_model](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/93ea559b-b351-412f-bb14-6b560ea6b572)
 
   sudo salt-call --local grains.item pythonpath
