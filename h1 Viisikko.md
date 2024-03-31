@@ -71,10 +71,11 @@ Olin asentanut Saltin jo aikaisemmin oppitunnilla ja kokeilin sen toimivuutta Po
 
 
 b) Hello Vagrant! 
-- Kokeilin komennoila:
+- Kokeilin komennoila
 
-  vangat status
-  vagrant global-status
+
+    vagrant status
+    vagrant global-status
 
 Vagrantin toimivuuden Windowsin Powrshellillä ja se palautti seuraavat vastaukset:
 ![vagtant-status](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/da0f0436-ccd9-4075-ab69-64aa894154c7)
@@ -83,6 +84,8 @@ Vagrantin toimivuuden Windowsin Powrshellillä ja se palautti seuraavat vastauks
 
 ## Uusi Linux-virtuaalikone Vagrantilla, viisi tärkeintä komentoa, idempotentti, Salt sekä koneen tiedot
 * Loin ensin uuden virtuaalikoneen jo asennettuun Vagranttiin
+
+
   vagrant up
   vagrant ssh
   
@@ -94,6 +97,8 @@ Vagrantin toimivuuden Windowsin Powrshellillä ja se palautti seuraavat vastauks
   sudo apt-get upgrade
 
 - Sitten asennetaan se (olisin voinut vain tarkistaa sudo salt-call --version - komennolla, onko se olemassa)
+
+
   sudo apt-get -y install salt-minion
 
 - Se olikin jo asennettuna (uusin versio)
@@ -110,9 +115,14 @@ Alkutiedot (pätee kaikkiin tuleviin komentoihin):
 - state.single määrittää yksittäisen tila-moduulin
 
 1) pkg
+
 Komennot 
+
+  
   $ sudo salt-call --local -l info state.single pkg.installed tree
   $ sudo salt-call --local -l info state.single pkg.removed tree
+
+
 * Käytin vähän teköälyä (Gemini) apuna tulosten analysoimisessa ja selvisi sitä kautta omatkin epäilykseni koemnnosta. Ensimmäisessä komennossa asennetaan tree-paketti paikalliselle virtuaalikoneelle ja toisella komennolla se poistetaan. Tuloksista näkyy molempien komentojen vaatimat ajat, pakettien polut, luonti sekä poistoaika ja se, suoriutuiko komento annetusta tehtävästä. Kysyin siltä siis, mitä komennot tarkoittavat ja lopputulos oli sana, kuin itselläni.
 
 ![pkg](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/c8c0ba22-586e-4693-b7bf-f51277eaa62d)
