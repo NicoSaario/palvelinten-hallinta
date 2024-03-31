@@ -47,4 +47,38 @@ b) GitHub
   - Täsmällisyys! Komennot, klikkaukset, kellonajat, onnistumiset, epäonnistumiset.
   - Helppolukuisuus
   - Lähdeviittaukset
+
+  ## Vagrant ja Salt
+  * Olin asentanut Vagrantin jo valmiiksi oppitunnilla. Asennus tehtiin sivulta
+
+  https://developer.hashicorp.com/vagrant/install?product_intent=vagrant
+
+  Ja kuvan mukaisesti valittiin omaan OS sopiva, eli tässä tapauksessa Windows ja AMD64
   
+![asennus](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/809e6865-86d5-4b08-8e3c-7630a0d5afc2)
+
+a) Hello Salt
+Olin asentanut Saltin jo aikaisemmin oppitunnilla ja kokeilin sen toimivuutta Powerhsellillä komennolla
+  salt-call --local grains.items
+
+![salt-call](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/45de1c76-a892-4aaa-a602-8a41ea527685)
+
+
+b) Hello Vagrant! 
+- Kokeilin komennoila:
+
+  vangat status
+  vagrant global-status
+
+Vagrantin toimivuuden Windowsin Powrshellillä ja se palautti seuraavat vastaukset:
+![vagtant-status](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/da0f0436-ccd9-4075-ab69-64aa894154c7)
+
+- Raporttia kirjoittaessani, oli itselläni yksi kone jo luotuna vagrantilla, joten se näytti sen. Vagrant global-status taas näyttää useiden luotujen ympäristöjen tilan. Lähteenä tähän käytin apuna artikkelia https://opensource.com/article/19/12/beginner-vagrant
+
+## Uusi Linux-virtuaalikone Vagrantilla, viisi tärkeintä komentoa, idempotentti, Salt sekä koneen tiedot
+* Loin ensin uuden virtuaalikoneen jo asennettuun Vagranttiin
+  vagrant up
+  vagrant ssh
+  
+  ![vagrantup_vagrantssh](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/c5789f59-b2b3-47c7-8ff0-365a1b751867)
+
