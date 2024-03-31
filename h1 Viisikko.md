@@ -115,6 +115,9 @@ Vagrantin toimivuuden Windowsin Powrshellillä ja se palautti seuraavat vastauks
 
 ### Viisi tärkeintä komentoa
 
+Komennot on haettu linkistä: 
+https://terokarvinen.com/2021/salt-run-command-locally/
+
 Alkutiedot (pätee kaikkiin tuleviin komentoihin):
 - sudo suorittaa järjestelmänvalvojan oikeuksilla
 - salt-call kutsuu Salttia
