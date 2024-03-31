@@ -82,3 +82,27 @@ Vagrantin toimivuuden Windowsin Powrshellillä ja se palautti seuraavat vastauks
   
   ![vagrantup_vagrantssh](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/c5789f59-b2b3-47c7-8ff0-365a1b751867)
 
+* Saltin asennus
+- Ensin taas peruskomennot
+  sudo apt-get update
+  sudo apt-get upgrade
+
+- Sitten asennetaan se (olisin voinut vain tarkistaa sudo salt-call --version - komennolla, onko se olemassa)
+  sudo apt-get -y install salt-minion
+
+- Se olikin jo asennettuna (uusin versio)
+  ![salt-call](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/502b87c2-a388-4f8f-bfd2-4acac3dd4e71)
+
+
+### Viisi tärkeintä komentoa
+- pkg
+Komennot 
+  $ sudo salt-call --local -l info state.single pkg.installed tree
+  $ sudo salt-call --local -l info state.single pkg.removed tree
+* Käytin vähän teköälyä (Gemini) apuna tulosten analysoimisessa ja selvisi sitä kautta omatkin epäilykseni koemnnosta. Ensimmäisessä komennossa asennetaan tree-paketti paikalliselle virtuaalikoneelle ja toisella komennolla se poistetaan. Tuloksista näkyy molempien komentojen vaatimat ajat, pakettien polut, luonti sekä poistoaika ja se, suoriutuiko komento annetusta tehtävästä
+
+![pkg](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/c8c0ba22-586e-4693-b7bf-f51277eaa62d)
+
+![pkg remove](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/78b67d51-2246-4a03-a6ff-a9809550aa2f)
+
+
