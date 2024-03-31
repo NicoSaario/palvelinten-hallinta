@@ -90,7 +90,8 @@ Vagrantin toimivuuden Windowsin Powrshellillä ja se palautti seuraavat vastauks
 
   vagrant up
   vagrant ssh
-  
+
+
   ![vagrantup_vagrantssh](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/c5789f59-b2b3-47c7-8ff0-365a1b751867)
 
 * Saltin asennus
@@ -107,6 +108,8 @@ Vagrantin toimivuuden Windowsin Powrshellillä ja se palautti seuraavat vastauks
   sudo apt-get -y install salt-minion
 
 - Se olikin jo asennettuna (uusin versio)
+
+  
   ![salt-call](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/502b87c2-a388-4f8f-bfd2-4acac3dd4e71)
 
 
