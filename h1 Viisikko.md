@@ -1,5 +1,6 @@
 # Kotitehtävät
-Kotitehtävät liittyvät kurssiin Palvelinten Hallinta ja löytyvät osoitteesta:
+- Kotitehtävät liittyvät kurssiin Palvelinten Hallinta ja löytyvät osoitteesta:
+
 
 https://terokarvinen.com/2024/configuration-management-2024-spring/
 
@@ -161,7 +162,50 @@ Absent ![nicote10absent](https://github.com/NicoSaario/palvelinten-hallinta/asse
 
 - Luo tyhjän tiedoston /tmp/foo ja varmistaa, ettei sitä muokata jos se on jo olemassa ja suorittaa komennon järjestelmässä.
 
-### idempotentti
+### Idempotenssi
+- Suoirin komennon
+  salt-call --local grains.items
+
+- Se tulosti järjestelmän ominaisuuksia ja suorittamalla sen uudestaan, se tekee ihan saman tulosteen uudelleen. Se ei myöskään tee muutoksia järjestelmän tilaan tai kokoonpanoon. Nämä tekevät siitä idempotenssin. Käytin apuna jälleen Gemini - tekoälyä, sillä en ihan täysin ymmärtänyt tehtävänantoa. Komennot kuitenkin suoritin sekä päättelin itse. Teoriapuolessa se oli apuna.
+
+![idempotenssi](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/e8be2280-0e5c-45a6-a4ec-938eea9e111b)
+
+- Testasin vielä ja tein saman komennon uudelleen, joka teki tismalleen saman tulosteen
+
+ ![ipmotenssi2](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/8fb663aa-ab76-44d6-81ff-dee74febcb8f)
+
+### Tietoa koneesta
+  sudo salt-call --local grains.item osfinger virtual
+
+![osfinger](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/bc12f995-d971-4ec2-a424-fed48ba8a0e2)
+
+- Näkyy tuloste siitä, että ajetaan Debianin 11 versiota VirtualBoxin kautta
+
+  sudo salt-call --local grains.item cpu_model
+
+- Näyttää CPU:n
+![cpu_model](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/93ea559b-b351-412f-bb14-6b560ea6b572)
+
+  sudo salt-call --local grains.item pythonpath
+
+- Näyttää pythonin asennuskansiot
+
+![pythonpath](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/854f7acb-b430-4634-8c1d-f9967d695678)
+
+
+- Käytännössä jokaisen grains.items - tulosteen kohdan voi yksilöllisesti hakea eri komennoilla ja saada tietoa, jos vain tietää, mitä hakee.
+
+
+### Lähteet
+- Tekoäly (Gemini)
+- Kotitehtävien anto: https://terokarvinen.com/2024/configuration-management-2024-spring/
+- https://terokarvinen.com/2006/06/04/raportin-kirjoittaminen-4/
+- https://terokarvinen.com/2018/control-windows-with-salt/
+- https://foxutech.com/salt-commands/
+- https://docs.saltproject.io/salt/user-guide/en/latest/topics/grains.html
+- https://terokarvinen.com/2023/create-a-web-page-using-github/
+- https://terokarvinen.com/2021/salt-run-command-locally/
+
 
 
 
