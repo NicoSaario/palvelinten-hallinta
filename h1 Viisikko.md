@@ -1,11 +1,15 @@
 # Kotitehtävät
 Kotitehtävät liittyvät kurssiin Palvelinten Hallinta ja löytyvät osoitteesta:
+
 https://terokarvinen.com/2024/configuration-management-2024-spring/
 
 ### Tiivistelmä
 Tehtävänä on tiivistää kolme seuraavaa artikkelia lyhyesti ja yrimekkäästi:
+
 https://terokarvinen.com/2006/06/04/raportin-kirjoittaminen-4/
+
 https://terokarvinen.com/2021/salt-run-command-locally/
+
 https://terokarvinen.com/2023/create-a-web-page-using-github/
 
 a) Salt
