@@ -240,6 +240,7 @@ Absent ![nicote10absent](https://github.com/NicoSaario/palvelinten-hallinta/asse
 - https://docs.saltproject.io/salt/user-guide/en/latest/topics/grains.html
 - https://terokarvinen.com/2023/create-a-web-page-using-github/
 - https://terokarvinen.com/2021/salt-run-command-locally/
+- https://opensource.com/article/19/12/beginner-vagrant
 
 
 
