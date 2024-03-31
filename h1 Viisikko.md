@@ -36,4 +36,15 @@ b) GitHub
   - Tyhjä rivi tekee kappalevälin
   - Urlt renderöityy automaattisesti
   - Koodinpätkät joko neljä välilyöntiä, `` tai Tab
-    
+
+  c) Raportin kirjoittaminen
+  - Täsmällinen kuvaus siitä, mitä teki ja mitä tapahtui
+  - Ei niin, että tekee ensin, kirjoittaa myöhemmin - Raportoi aina samalla, kun teet!
+  - Toimii hyvinä muistiinpanoina ja kuten edellisellä Linux-kurssilla huomasin, tarkkaa rapottia on todella helppo seurata ja suorittaa täten omien raporttien avulla tehtäviä
+  - Auttaa selkeyttämään ajatuksia sekä paikantamaan virheitä
+  - Raportoi ympäristö - kaikki ei välttämättä toimi samanlailla eri ympäristössä
+  - Jokin toinen opiskelija tekee raportin perusteella työn, pitäisi olla sama lopputulos
+  - Täsmällisyys! Komennot, klikkaukset, kellonajat, onnistumiset, epäonnistumiset.
+  - Helppolukuisuus
+  - Lähdeviittaukset
+  
