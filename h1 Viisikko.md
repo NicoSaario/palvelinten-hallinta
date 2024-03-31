@@ -95,14 +95,74 @@ Vagrantin toimivuuden Windowsin Powrshellillä ja se palautti seuraavat vastauks
 
 
 ### Viisi tärkeintä komentoa
-- pkg
+
+Alkutiedot (pätee kaikkiin tuleviin komentoihin):
+- sudo suorittaa järjestelmänvalvojan oikeuksilla
+- salt-call kutsuu Salttia
+- --local suorittaa vain paikallisella koneella
+- -l info tulostaa info-tilan, jolla saa yksityiskohtaisempia tietoja
+- state.single määrittää yksittäisen tila-moduulin
+
+1) pkg
 Komennot 
   $ sudo salt-call --local -l info state.single pkg.installed tree
   $ sudo salt-call --local -l info state.single pkg.removed tree
-* Käytin vähän teköälyä (Gemini) apuna tulosten analysoimisessa ja selvisi sitä kautta omatkin epäilykseni koemnnosta. Ensimmäisessä komennossa asennetaan tree-paketti paikalliselle virtuaalikoneelle ja toisella komennolla se poistetaan. Tuloksista näkyy molempien komentojen vaatimat ajat, pakettien polut, luonti sekä poistoaika ja se, suoriutuiko komento annetusta tehtävästä
+* Käytin vähän teköälyä (Gemini) apuna tulosten analysoimisessa ja selvisi sitä kautta omatkin epäilykseni koemnnosta. Ensimmäisessä komennossa asennetaan tree-paketti paikalliselle virtuaalikoneelle ja toisella komennolla se poistetaan. Tuloksista näkyy molempien komentojen vaatimat ajat, pakettien polut, luonti sekä poistoaika ja se, suoriutuiko komento annetusta tehtävästä. Kysyin siltä siis, mitä komennot tarkoittavat ja lopputulos oli sana, kuin itselläni.
 
 ![pkg](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/c8c0ba22-586e-4693-b7bf-f51277eaa62d)
 
 ![pkg remove](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/78b67d51-2246-4a03-a6ff-a9809550aa2f)
+
+2) file
+* Komennot
+  $ sudo salt-call --local -l info state.single file.managed /tmp/hellonico
+
+  $ sudo salt-call --local -l info state.single file.managed /tmp/moinico contents="foo"
+
+  $ sudo salt-call --local -l info state.single file.absent /tmp/hellotero
+
+- Näyttäisivät tekevän tiedoston.
+1) Ensimmäinen komento etsii ja katsoo, onko teidostoa olemassa. Jos sitä ei ole, se luo tiedoston. Muuten samat infot, kuin pkg - kohdassa.
+
+![file_managed](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/69ba240e-41f7-4223-912a-047ba069cdef)
+
+2) Käsittääkseni ja jälleen tekoälyn avustamana, contents="foo" tekee tuon moinicon sisälle arvon foo
+
+![managed_foo](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/5e5b99dd-9ca6-4682-9f40-e42b873f8826)
+
+4) Poistaa tiedoston, jos se on olemassa
+
+![file-absent](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/f3f6c99a-be65-4015-abca-d018517dbb96)
+
+3) service.running
+   Yksinkertaisuudessaan tämä komento potkisi Apachea hereille ja automatisoisi apache2 automaattisen käynnistymisen, mutta itselläni sitä tässä harjoituksessa ei ole asennettu, joten se antaa virheilmoituksen, koska service apache2 is not available. Hyvä analysoida virheilmoituksiakin välillä! 
+   
+$ sudo salt-call --local -l info state.single service.running apache2 enable=True
+
+$ sudo salt-call --local -l info state.single service.dead apache2 enable=False
+
+![apache2_service](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/5dcaf9e6-0aee-42da-9848-0cdeb77e2db5)
+
+4) user. present - User Should Exist
+- Komennnot 
+  $ sudo salt-call --local -l info state.single user.present nicote10
+
+  $ sudo salt-call --local -l info state.single user.absent nicote10
+
+- Etsii ja luo käyttäjän, jonka nimi on tässä nicote10. Absent poistaa käyttäjän. Tiedoista näkee, miten komento tekee groupin, pystyy asettamaan nimet, puhelinnumerot, salasanat jne.
+  
+Present ![nicote10](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/33cf86e0-290e-4a68-a556-43183b1120a8)
+
+Absent ![nicote10absent](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/836deb5d-cee9-4f47-ab35-6cdb26067552)
+
+4) CMD.RUN - Running a Command
+
+    $ sudo salt-call --local -l info state.single cmd.run 'touch /tmp/foo' creates="/tmp/foo"
+
+- Luo tyhjän tiedoston /tmp/foo ja varmistaa, ettei sitä muokata jos se on jo olemassa ja suorittaa komennon järjestelmässä.
+
+### idempotentti
+
+
 
 
