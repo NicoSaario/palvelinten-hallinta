@@ -4,6 +4,11 @@
 
 https://terokarvinen.com/2024/configuration-management-2024-spring/
 
+* Kotitehtävät on tehty Windows 11 - Home - käyttöjärjestelmä, päivitykset ajettu 04.01.2024 asti.
+* AMD Ryzen 5 4500U, RAM 8 Gt.
+*  Aika: Itä-Euroopan normaaliaika Aikavyöhyke: Suomi (UTC+2) 14.03.2024
+* Powershell
+
 ### Tiivistelmä
 Tehtävänä on tiivistää kolme seuraavaa artikkelia lyhyesti ja yrimekkäästi:
 
