@@ -111,7 +111,9 @@ sudoedit init.sls
 
 ```
 $ sudo salt-call --local state.apply hello
+
 ```
+
 
 ## Kaksi virtuaalikonetta samaan verkkoon. Osoita, että koneet voivat pingata toisiaan ja, että pystyt käyttämään kumpaakin konetta
 
