@@ -10,5 +10,6 @@ Tehtävänä tiivistää lyhyesti muutamalla ranskalaisella viivalla seuraavat l
 * Two machine virtual network
   - Vagrantin asennus
   - Luodaan projektille tiedosto
+    
   $ mkdir twohost/; cd twohost/
   $ nano Vagrantfile
