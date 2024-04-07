@@ -23,4 +23,54 @@ vagrant destroy #tuhoaa kaiken molemmista virtuaalikoneista
 vagrant up #tekee uuden, kokonaan tyhjän
 ```
 
+* Salt Quickstart
+- Saltin avulla voi hallita tuhansia koneita
+- Orjat voivat olla missä tahansa, NATin ja  palomuurin takana tai tuntemattomassa osoitteessa
+
+- Masterin luonti:
+
+```
+master$ sudo apt-get update
+master$ sudo apt-get -y install salt-master
+master$ hostname -I
+10.0.0.88
+```
+- Jos masterilla on palomuuri, pitää tehdä rei´ät 4505/tcp sekä 4506/tcp
+
+- Orjan luonti:
+```
+slave$ sudo apt-get update
+slave$ sudo apt-get -y install salt-minion
+```
+- Orjan pitää tietää herran sijainti. Jokaisella orjalla tarvitsee olla oma id
+- Esim:
+
+```
+slave$ sudoedit /etc/salt/minion
+master: 10.0.0.88
+id: orja1
+```
+
+- Lopuksi potkitaan hereille:
+  
+```
+slave$ sudo systemctl restart salt-minion.service
+```
+- Kokeilu
+```
+master$ sudo salt '*' cmd.run 'whoami'
+orja1:
+ root
+```
+
+- Muita komentoja:
+```
+master$ sudo salt '*' cmd.run 'hostname -I'
+master$ sudo salt '*' grains.items|less
+master$ sudo salt '*' grains.items
+master$ sudo salt '*' grains.item virtual
+master$ sudo salt '*' pkg.install httpie
+master$ sudo salt '*' sys.doc|less
+```
+
 
