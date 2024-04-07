@@ -64,6 +64,7 @@ orja1:
 ```
 
 - Muita komentoja:
+
 ```
 master$ sudo salt '*' cmd.run 'hostname -I'
 master$ sudo salt '*' grains.items|less
@@ -75,11 +76,14 @@ master$ sudo salt '*' sys.doc|less
 
 ### c) Hello Salt
 - Asennus
+
 ```
 $ sudo apt-get update
 $ sudo apt-get -y install salt-minion
 ```
+
 - Itse ainakin suosin microa, joten sen asennus:
+
   ```
 $ sudo apt-get -y install micro
 $ export EDITOR=micro
@@ -93,15 +97,19 @@ $ export EDITOR=micro
 $ sudo mkdir -p /srv/salt/hello/
 $ cd /srv/salt/hello/
 ```
+
 * /srv/salt - kansio jakaa kaikille orjatietokoneille
 * Kansio hello/ sisältää kaiken liittyen hello worldiin, salt koodiin ja kaikkiin tiedostoihin tai templateihin.
 
 Infra as a code
 - Pitää olla kansion '/stv/salt/hello' sisällä
+
 ```
 sudoedit init.sls
 ```
+
 - Avaa microeditorilla tiedoston, johon voidaan laittaa idempotentteja, esim:
+
 ```
 /tmp/hellonico:
   file.managed
@@ -113,7 +121,6 @@ sudoedit init.sls
 $ sudo salt-call --local state.apply hello
 
 ```
-
 
 ## Kaksi virtuaalikonetta samaan verkkoon. Osoita, että koneet voivat pingata toisiaan ja, että pystyt käyttämään kumpaakin konetta
 
