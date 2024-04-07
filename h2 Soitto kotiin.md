@@ -1,13 +1,13 @@
 # Kotitehtävät
 
 
-## Tiivistelmät
+## x) Tiivistelmät
 Tehtävänä tiivistää lyhyesti muutamalla ranskalaisella viivalla seuraavat linkit:
 - https://terokarvinen.com/2021/two-machine-virtual-network-with-debian-11-bullseye-and-vagrant/
 - https://terokarvinen.com/2018/salt-quickstart-salt-stack-master-and-slave-on-ubuntu-linux/?fromSearch=salt%20quickstart%20salt%20stack%20master%20and%20slave%20on%20ubuntu%20linux
 - https://terokarvinen.com/2024/hello-salt-infra-as-code/
 
-* Two machine virtual network
+### a) Two machine virtual network
   - Vagrantin asennus
   - Luodaan projektille hakemisto ja laitetaan sinne Vagrantfile
 
@@ -23,7 +23,7 @@ vagrant destroy #tuhoaa kaiken molemmista virtuaalikoneista
 vagrant up #tekee uuden, kokonaan tyhjän
 ```
 
-* Salt Quickstart
+### b) Salt Quickstart
 - Saltin avulla voi hallita tuhansia koneita
 - Orjat voivat olla missä tahansa, NATin ja  palomuurin takana tai tuntemattomassa osoitteessa
 
@@ -72,5 +72,50 @@ master$ sudo salt '*' grains.item virtual
 master$ sudo salt '*' pkg.install httpie
 master$ sudo salt '*' sys.doc|less
 ```
+
+### c) Hello Salt
+- Asennus
+```
+$ sudo apt-get update
+$ sudo apt-get -y install salt-minion
+```
+- Itse ainakin suosin microa, joten sen asennus:
+  ```
+$ sudo apt-get -y install micro
+$ export EDITOR=micro
+  ```
+
+- Sille luodaan kansio, vaikkapa "hello" moduulille.
+- Moduulit asentaa, konfiguroi ja tallentaa.
+- Voitaisiin luoda vaikka Apachelle ja Micro editorille omat moduulit:
+
+```
+$ sudo mkdir -p /srv/salt/hello/
+$ cd /srv/salt/hello/
+```
+* /srv/salt - kansio jakaa kaikille orjatietokoneille
+* Kansio hello/ sisältää kaiken liittyen hello worldiin, salt koodiin ja kaikkiin tiedostoihin tai templateihin.
+
+Infra as a code
+- Pitää olla kansion '/stv/salt/hello' sisällä
+```
+sudoedit init.sls
+```
+- Avaa microeditorilla tiedoston, johon voidaan laittaa idempotentteja, esim:
+```
+/tmp/hellonico:
+  file.managed
+```
+
+- Katsotaan ja ajetaan seuraava komento, josta myös näämme yksityiskohtaisen selityksen siitä, mitä on tehty:
+
+```
+$ sudo salt-call --local state.apply hello
+```
+
+## a) Kaksi virtuaalikonetta samaan verkkoon. Osoita, että koneet voivat pingata toisiaan ja, että pystyt käyttämään kumpaakin konetta
+
+
+
 
 
