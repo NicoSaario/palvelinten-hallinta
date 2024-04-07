@@ -12,4 +12,5 @@ Tehtävänä tiivistää lyhyesti muutamalla ranskalaisella viivalla seuraavat l
   - Luodaan projektille tiedosto
     
   $ mkdir twohost/; cd twohost/
+
   $ nano Vagrantfile
