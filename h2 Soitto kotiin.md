@@ -84,10 +84,10 @@ $ sudo apt-get -y install salt-minion
 
 - Itse ainakin suosin microa, joten sen asennus:
 
-  ```
+```
 $ sudo apt-get -y install micro
 $ export EDITOR=micro
-  ```
+```
 
 - Sille luodaan kansio, vaikkapa "hello" moduulille.
 - Moduulit asentaa, konfiguroi ja tallentaa.
@@ -122,7 +122,7 @@ $ sudo salt-call --local state.apply hello
 
 ```
 
-## Kaksi virtuaalikonetta samaan verkkoon. Osoita, että koneet voivat pingata toisiaan ja, että pystyt käyttämään kumpaakin konetta
+## a) Kaksi virtuaalikonetta samaan verkkoon. Osoita, että koneet voivat pingata toisiaan ja, että pystyt käyttämään kumpaakin konetta
 
 
 
