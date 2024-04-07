@@ -9,11 +9,18 @@ Tehtävänä tiivistää lyhyesti muutamalla ranskalaisella viivalla seuraavat l
 
 * Two machine virtual network
   - Vagrantin asennus
-  - Luodaan projektille tiedosto
+  - Luodaan projektille hakemisto ja laitetaan sinne Vagrantfile
 
 ```
 $ mkdir twohost/; cd twohost/
 $ nano Vagrantfile
 ```
+- Sen jälkeen on mahdollista ssh yhteydellä liittyä ssh001 ja ssh 002 - exit=takaisin host OS
+- Molemmat voivat yhdistää toisiinsa sekä internettiin
 
-Kokeilu
+```
+vagrant destroy #tuhoaa kaiken molemmista virtuaalikoneista
+vagrant up #tekee uuden, kokonaan tyhjän
+```
+
+
