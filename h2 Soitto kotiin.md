@@ -204,7 +204,7 @@ vagrant ssh t001
 
 
 
-## b) Salt herra-ohja. ASennetaan toimimaan ne verkon yli. 
+## b) ja c) Salt herra-ohja. Asennetaan toimimaan ne verkon yli sekä suoritetaan komento
 
 - Olin jo valmiiksi t001 - koneella, joten ajattelin tehdä siitä masterin.
 - Noudatan aikaisemmin tiivistettyä ohjetta https://terokarvinen.com/2018/salt-quickstart-salt-stack-master-and-slave-on-ubuntu-linux/?fromSearch=salt%20quickstart%20salt%20stack%20master%20and%20slave%20on%20ubuntu%20linux
@@ -244,6 +244,23 @@ sudo systemctl restart salt-minion.service
 
 ![image](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/0b9d1893-4efc-40a7-9a05-f0eebfd4efd5)
 
+- Geminiltä pyysin lähettämään jonkun shell-komennon ja se ehdotti seuraavaa:
+
+```
+sudo salt '*' cmd.run 'echo "Hei maailma!" >> /tmp/output.txt'
+```
+
+* Tämä siis tekee output.txt - tiedoston, johon tulostaa "Hei maailma!", jonka master-kone lähetti. Tarkistin sen menevän perille orjakoneelta menemällä tuodon tiedostoon komennolla
+
+```
+cat output.txt
+```
+
+ja huomasin, että se oli toiminut:
+
+![image](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/40db7f3f-f692-4e41-bc0a-915d710b466f)
+
+## d) Aja useita idempotentteja (state.single) komentoja master-slave yhteyden yli
 
 
 
