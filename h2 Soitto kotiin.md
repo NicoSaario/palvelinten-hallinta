@@ -262,6 +262,43 @@ ja huomasin, että se oli toiminut:
 
 ## d) Aja useita idempotentteja (state.single) komentoja master-slave yhteyden yli
 
+- Ilmeisesti tässä on hyvä noudattaa https://terokarvinen.com/2018/salt-states-i-want-my-computers-like-this/ ohjeita ja tehdä sen mukaan
+- Ollaan jälleen master t001 - koneella
+-  Kokeilin tällä kertaa vähän ensin, miten tuo toimii ja raportoin vähän jäljessä.
+-  Loin masterille kansion, johon kaikki ohjeet tulevat orjille
+
+```
+sudo mkdir - p /srv/salt/
+```
+
+- Tein ohjeen mukaisen sls-tiedoston "states"
+
+```
+/tmp/terveorja.txt:
+  file.managed:
+    - source: salt://terveorja.txt
+```
+
+- Muokkasin tekstiä terveorja.txt ja lisäsin sinne "Nähdään www.google.fi"
+
+```
+sudoedit /srv/salt/terveorja.txt
+Nähdään www.google.fi
+```
+
+- Suoritin komennon, jonka uskoin lähtevän suoraan orjalle ja testasin samalla, miten se toimii
+
+```
+sudo salt '*' state.apply hello
+```
 
 
+![image](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/2e8b936b-4e0f-45a5-8c2d-e8a77fdf9853)
 
+- Kävin katsomassa orjan /tmp - tiedostoja, johon tuon txt - tiedoston pitäisi tulla
+- Siellähän se on!
+
+![image](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/79b0c330-7ccc-4ba1-aa05-39b911ef9fb1)
+
+
+   
