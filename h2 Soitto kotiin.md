@@ -153,10 +153,46 @@ ettei tiedostoa ole edes olemassa ja näinhän se oli.
 
 ![image](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/eb77a683-102b-44e7-b1ba-6027aab427da)
 
+- Loin siis Vagrantfilen init - komennolla ja muokkasin komennolla
+
+```
+  start notepad++ ./Vagrantfile
+```
+
+- Laitoin https://terokarvinen.com/2021/two-machine-virtual-network-with-debian-11-bullseye-and-vagrant/ konffiohjeen mukaisen tekstirimpsun sisään, tallensin ja poistuin notepadista.
+
 * Ongelma näyttää siis ratkenneen ainakin osittain. Kuvittelin ongelman olevan jostain syystä tavallisesssa notepadissa, jota käytin aikaisemmin.. Nappasin siis aikaisemminkin käyttäneeni Notepad++ asennuksen nopealla surffauksella ja sain varmuuden omillle harhaluuloilleni. Uskoisin kuitenkin, että ongelma oli ensinnäkin siinä, ettei PowerShell ollut auki adminioikeuksilla sekä se, että jokin tiedoston polussa/tiedostonimessä oli harhautunut. Muutaman lähteen mukaan Vagrantin default - nimisen koneen nimi pitäisi muuttaa/muuttua, mutta mielestäni ajetun konffin olisi pitänyt se tehdä(?); näin ei kuitenkaan ollut.
 
 * Toinen huomio oli tuo vagrant init - komento suoraan luotuun kansioon. Unohdin sen tehdä kokonaan ja kuvittelin, että pelkkä "start notepad++ Vagrantfile" olisi luonut tarvittavan tiedoston, mutta nyt kun tutkin sitä tarkemmin, twohost - polusta puuttui aikaisemmin .vagrant sekä shared - kansiot. Ongelma taisi piillä myös siinä.
 
-* 
+![image](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/ae56a1fd-fd6f-42e6-becf-234cbfa72422)
+
+* Homma siis rullaa eteenpäin vihdoin. Kiitokset Sakulle kattavasta ohjeesta.
+-  Tähän päättyy https://github.com/KebabGarva/Linux-palvelinten-hallinta-bgu248/blob/main/h2.md noudattamani "lunttausohje"
+
+## a) Uusi startti
+- Suoritin komennon
+
+```
+vagrant up
+```
+
+ja huomasin heti muutokset, jotka oli tehty. Aikaisemmin yhteyden muodostamisen koodirivit olivat simppelimpiä, lyhyempiä, default - nimellä ja kestivät vain muutaman sekunnin. Nyt koneen luomisessa meni noin 60s ja toiminnot olivat hyvinkin erinäköisiä. Muutoksen huomaa jo ensimmäisiltä riveiltä.
+
+![vagrantinit_up](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/0aa895c3-ebce-4626-bfdb-5f1a928e902a)
+
+- Nyt jatketaan https://terokarvinen.com/2021/two-machine-virtual-network-with-debian-11-bullseye-and-vagrant/ ohjeen mukaisesti.
+- Otetaan testiyhteys t001:
+
+```
+vagrant ssh t001
+```
+
+
+
+
+
+
+
 
 
