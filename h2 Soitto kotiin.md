@@ -309,7 +309,7 @@ sudo salt '*' state.apply hello
 
 ## e) Kerää teknistä tietoa orjista verkon yli (grains.item)
 
-- Vilkaistaan nyt kernel ja  master
+- Vilkaistaan nyt kernel ja  master (palauttaa nätisti masterin ip-osoitteen, joka sinne laitettiin :) )
 
 ```
 sudo salt '*' grains.item master kernel |less
