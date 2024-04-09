@@ -260,7 +260,7 @@ ja huomasin, että se oli toiminut:
 
 ![image](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/40db7f3f-f692-4e41-bc0a-915d710b466f)
 
-## d) Aja useita idempotentteja (state.single) komentoja master-slave yhteyden yli
+## f) Aja useita idempotentteja (state.single) komentoja master-slave yhteyden yli (EDIT= Tehtävä d ja f meni sekaisin, joten tämä on F! "Tee infraa koodina, aja tila orjalle, voi tehdä esimerkkitiedoston hakemistoon. Testaa komento")
 
 - Ilmeisesti tässä on hyvä noudattaa https://terokarvinen.com/2018/salt-states-i-want-my-computers-like-this/ ohjeita ja tehdä sen mukaan
 - Ollaan jälleen master t001 - koneella
@@ -300,5 +300,53 @@ sudo salt '*' state.apply hello
 
 ![image](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/79b0c330-7ccc-4ba1-aa05-39b911ef9fb1)
 
+## e) Kerää teknistä tietoa orjista verkon yli (grains.item)
 
-   
+- Vilkaistaan nyt kernel ja  master
+
+```
+sudo salt '*' grains.item master kernel |less
+```
+
+![image](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/9ebbedba-49f4-469c-a537-284bc286fdcd)
+
+
+## d) Aja useita idempotentteja (state.single) komentoja master-slave yhteyden yli
+- Aloitin (h1) tutusta komennolla
+
+```
+sudo salt '*' -l info state.single cmd.run 'touch /tmp/foo' creates="/tmp/foo"
+```
+
+Joka luo tyhjän tiedoston. Tarkistin sen orjakoneelta ja siellähän se oli.
+
+![image](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/1fbc65d6-8904-4fef-bf96-a8e1e7c0f9f8)
+
+
+- Aikaisemmin asensin Microeditorin orjalle testinä (raportin ulkopuolella) ja kokeilin pkg.installed sekä .removed- komentoja
+
+```
+sudo salt '*' -l info state.single pkg.installed tree
+
+sudo salt '*' -l info state.single pkg.removed tree
+
+```
+
+![image](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/f932104a-13ee-41eb-bb32-7ee33db9ba4c)
+
+
+
+### Lähteet
+
+* Gemini (Tekoäly)
+* Kotitehtävät: https://terokarvinen.com/2024/configuration-management-2024-spring/ (luettu 09/04/2024)
+* Soitto kotiin by Saku Laitinen: https://github.com/KebabGarva/Linux-palvelinten-hallinta-bgu248/blob/main/h2.md (luettu 09/04/2024)
+* Salt States - I want My Computers Like This, Tero Karvinen (2018), https://terokarvinen.com/2018/salt-states-i-want-my-computers-like-this/ (luettu 09/04/2024)
+* Hello Salt Infra-as-Code, Tero Karvinen https://terokarvinen.com/2024/hello-salt-infra-as-code/ (luettu 09/04/2024)
+* Two Machine Virtual Network With Debian 11 Bullseye and Vagrant, Tero Karvinen https://terokarvinen.com/2021/two-machine-virtual-network-with-debian-11-bullseye-and-vagrant/ (luettu 09/04/2024)
+*  Salt Quickstart - Salt Stack Master and Slave on Ubuntu Linux, Tero Karvinen (2018) https://terokarvinen.com/2018/salt-quickstart-salt-stack-master-and-slave-on-ubuntu-linux/?fromSearch=salt%20quickstart%20salt%20stack%20master%20and%20slave%20on%20ubuntu%20linux (luettu 09/04/2024)
+*  StackOverflow/Questions https://stackoverflow.com/questions/23482341/the-machine-with-the-name-c6401-was-not-found-configured-for-this-vagrant-env (luettu 09/04/2024)
+* How to Create Multiple Virtual Machines Using Vagrant Tool, Surya Raj Ghimire (2023), https://medium.com/@srghimire061/how-to-create-multiple-virtual-machines-using-vagrant-tool-d4b074d5bdcc (luettu 09/04/2024)
+
+
+
