@@ -32,6 +32,14 @@ l) git config --global user.name
 
 - GitHubista löytyy kohta Code - SSH copy
 
-## Muistiinpanot on tehty oppitunnilta
+- Jos haluaa lisätä muita, GitHubista löytyy 'Add Collaborators'
+- Click Add People
+- Invite by search
+- Add NAME to REPO
+- Tulee sähköpostilla invite
+
+
+
+## Muistiinpanot on tehty oppitunnilta Palvelinten Hallinta, jonka vetäjänä toimii:
 
 www.terokarvinen.com
