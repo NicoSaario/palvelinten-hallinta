@@ -38,6 +38,9 @@ l) git config --global user.name
 - Add NAME to REPO
 - Tulee sähköpostilla invite
 
+```
+git log --patch
+```
 
 
 ## Muistiinpanot on tehty oppitunnilta Palvelinten Hallinta, jonka vetäjänä toimii:
