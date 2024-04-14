@@ -43,13 +43,117 @@
   - 8 eri committia
  
   ## Varsinaiset tehtävät
-  a) Online - Tee uusi varasto, nimi summer, description summer
+ ### a) Online - Tee uusi varasto, nimi summer, description summer
     - Loin GitHubiin uuden repon, jonka nimeksi tulee summer ja descriptioniksi valitsin summer with Git
     - Pittää muistaa laittaa julkiseksi, lisätä README file sekä valita lisenssi GNU General Public Licence v3.0
     -  Sitten create repository
 
 ![image](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/93875e1a-a08b-4c2b-8ab3-bb82be117805)
 
-b) Dolly. Kloonaa edellisesä kohdassa tehty varasto, tee muutoksia omalla koneella, puske palvelimelle ja näytä, että ne ilmestyvät webbiliittymään
+### b) Dolly. Kloonaa edellisesä kohdassa tehty varasto, tee muutoksia omalla koneella, puske palvelimelle ja näytä, että ne ilmestyvät webbiliittymään
 - Olin SSH - avaimen GitHubissa liittänyt jo valmiiksi virtuaalikoneelle, joten pitää ainoastaan kloonata se
-- 
+- Teen seuraavat komennot:
+
+```
+mkdir summer ; cd summer
+git clone
+```
+- git clone - komentoon tulee ssh url GitHubin summer reposta
+
+![image](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/6bc32930-72f1-489d-907f-1e19c25e44a8)
+
+- Kokeilin piruuttaan uudelleen kloonata summer - kansioon summer - repon ja huomasin, että se tekee ilmeisesti linkitetyn kansion sen sisään. Ajattelin samalla vähän testata sen funktiota
+- Jotta en liikaa eksy ensin aiheesta, teen tiedoston ja sisältöä GitHubiin gitillä seuraavasti:
+
+```
+micro jokutiedosto.md
+```
+
+```
+git add . && git commit; git pull && git push
+```
+
+- Laitan ensimmäiseen committiin "Make File", koska halusin testata tuon toimivuutta
+- Toiseen committiin "Add Text File summer"
+- Päivitän GitHubin selaimesta ja nähtävästi se tuli esiin. Hyvä juttu siis. Myös tuo summer - kansio näyttää ilmaantuneen
+
+![image](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/e9a235ce-8c6c-4192-a6a1-bd1ff832128b)
+
+- Kokeilen seuraavaa: teen md - tiedoston tuohon summer - kansioon, mutta en saa avattua edes koko kansiota. Tuntuu vähän siltä, ettei se toiminutkaan halutulla tavalla, joten kokeilu on toistaiseksi siinä.
+- Siinä vielä jokutiedosto.md sisältö
+
+![image](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/bb8b8561-dbd6-4ffe-abb2-4d2c19ee09fa)
+
+
+### c) Doh! Tee tyhmä muutos gittiin, älä tee committia. Tuhoa huonot muutokset
+
+- Voisin ehkä jatkaa tuota aikaisempaa testiä ja tehdä sen kautta hölmön muutoksen.
+
+```
+mv summer/ kesä
+```
+
+- Nyt ennen tehtävän suoritusta haluan vielä kokeilla, vaikuttaako tuo "summer" - nimi asiaan.
+
+```
+git add . && git commit; git pull && git push
+```
+
+- Itse asiassa "tyhmä kokeilu" olikin hyvä kokeilu! Tuolla tavalla voi siis lisätä kansioita ja sen sisään tiedostoja:
+
+![image](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/cec83243-fc67-4260-b2b9-ef6573af5ce9)
+
+![image](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/86de082e-c079-459b-b44b-dce36f3ce946)
+
+![image](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/469810a6-e252-46c9-8463-5f1896b10b5b)
+
+
+- Hyvin toimii siis ja kätevä tapa tehdä kansioita gitillä GitHubin sisään.
+- Tuossa vielä history:
+
+![image](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/3667bfa0-ae2f-429a-b4ba-2d448adbf108)
+
+- No niin ja itse tehtävään.
+- Muutan vähän tiedostonimiä ja tiedoston sisältöä seuraavilla komennoilla:
+
+```
+mv jokutiedosto.md hömppähomma.md
+micro hömppähomma.md
+```
+- Kuten kuvassa näkyy, tiedoston nimi on muuttunut ja seuraavalla komennolla:
+
+```
+git reset --hard
+```
+
+- Pitäisi toivon mukaan muutokset resetoitua aikaisempaan committiin.
+- Näin näyttää olevan!
+
+![image](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/ca04c313-6a2b-4e05-9c5f-945690b5b3b4)
+
+
+### d) Tukki. Tarkastele ja selitä varastosi lokia. Tarkista, että nimesi ja sähköposti näkyy haluamalla tavalla ja korjaa tarvittaessa
+
+- Käytin komentoa
+
+```
+git log
+```
+
+- Sain aikaisemmin asettamani sähköpostin sekä käyttäjän näkyviin! Hieno homma siis. Olin tunnilla asettanut koulun tunnukset sekä user - nameksi kana.
+- Analysointi: kuvassa näkyy tismalleen luettelemani muutokset, jossa kellonajat on kyllä hieman kyseenalaisia, sillä teen tätä itse asiassa 15/04/2024 ja kello on 01:26
+- Ja logit menee järjestyksessä alhaalta ylös
+- Mutta juu. Vaihdoin testaamani summer - kansionimeksi - 'kesä' siinä testissä, jonka mainitsin.
+- Julkaisin/yhdistin kansiorakenteen
+- Committasin jokutiedosto.md ja tein sinne muutoksia
+- Aloitin commitin
+- Loin tiedoston "jokutiedosto.md"
+
+![image](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/30c56994-d051-40d6-b419-4f06ff47de54)
+
+### e) Suolattu rakki. Aja Salt-tiloja omasta varastostasi
+
+
+
+
+
