@@ -2,6 +2,14 @@
 
 - Kotitehtävät liittyvät Palvelinten Hallinta kurssille ja tehtävänannot ovat suoraan sivulta https://terokarvinen.com/2024/configuration-management-2024-spring/
 
+Kotitehtävät on tehty Windows 11 - Home - käyttöjärjestelmällä, päivitykset ajettu 15/04/2024 asti.
+
+- AMD Ryzen 5 4500U, RAM 8 Gt.
+
+- Aika: Itä-Euroopan normaaliaika Aikavyöhyke: Suomi (UTC+2) 15/04/2024
+
+- Powershell + Vagrant
+
 ## x) Lue ja Tiivistä
 
 - Tiivistämiseen riittää muutama ranskalainen viiva
