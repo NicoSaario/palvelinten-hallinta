@@ -177,10 +177,10 @@ sudo apt-get install -y salt-minion
 - Kokeilen ajaa komentoa 
 
 ```
-sudo salt-call --local --file-root srv/salt/ state.apply
+sudo salt-call --local --file-root srv/salt/testisuola state.apply
 ```
 
-- En kuitenkaan saa mitään järkevää vastausta ja toistaiseksi tehtävä päättyy osaltani siihen. Mietin, tarviiko nyt luoda uusi kone ja tehdä
+- En kuitenkaan saa mitään järkevää vastausta ja toistaiseksi tehtävä päättyy osaltani siihen. Mietin, tarviiko nyt luoda uusi kone ja tehdä myös slave, mutta tarvii tähän kyllä perehtyä lisää..
 
 
 ### Lähteet
