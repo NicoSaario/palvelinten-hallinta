@@ -150,11 +150,38 @@ git log
 - Aloitin commitin
 - Loin tiedoston "jokutiedosto.md"
 
-![image](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/30c56994-d051-40d6-b419-4f06ff47de54)
+![image](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/bdae0483-9ea4-4aa1-a086-0ea2a4bba26f)
+
 
 ### e) Suolattu rakki. Aja Salt-tiloja omasta varastostasi
+- Teen tiedostot
+
+```
+mkdir -p testisuola
+mkdir testisuola.sls
+```
+- Asennan saltin
+
+```
+sudo apt-get install -y salt-minion
+```
+
+- Kokeilen ajaa komentoa 
+
+```
+sudo salt-call --local --file-root srv/salt/ state.apply
+```
+
+- En kuitenkaan saa mitään järkevää vastausta ja toistaiseksi tehtävä päättyy osaltani siihen. Mietin, tarviiko nyt luoda uusi kone ja tehdä
 
 
-
+### Lähteet
+1) Pro Git Book, by Scorr Chacon and Ben Straub:  https://git-scm.com/book/en/v2 (luettu 15/04/2024)
+2) 1.3 Getting Started - What is Git?: https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F (luettu 15/04/2024)
+3) terokarvisen suolat https://github.com/terokarvinen/suolax/ (luettu 15/04/2024)
+4) ⚡ Git Workflow: Add, Commit, Push, Pull
+Pankaj Kholiya: https://medium.com/@itsmepankaj/git-workflow-add-commit-push-pull-69adf44cf812 (luettu 15/04/2024)
+5) Infra as Code - Palvelinten hallinta 2024: https://terokarvinen.com/2024/configuration-management-2024-spring/
+(luettu 15/04/2024)
 
 
