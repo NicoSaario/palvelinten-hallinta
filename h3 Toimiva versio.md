@@ -36,5 +36,9 @@
 - Git add - Kertoo, mihin kiinnittää huomiota; ' Lisää - vaihe'.
 - Git commit - Lyhyt viesti siitä, mitä on tehty. Selkeä, lyhyt kuvaus siitä, että muut ymmärtävät tehdyt muutokset
 - Git push - "Pusketaan" Commitit tietokoneen ulkopuolelle, esimerkiksi jollekin etäserverille, kuten GitHubille. 
-  
+
+  4) https://github.com/terokarvinen/suolax/commits/main/ Commits - historia
+  - Kaikki commitit tehty saman päivän aikana, samalta käyttäjältä (paitsi "improve usage instructions)
+  - Simppelit demostraatiot siitä, mitä on tehty ja miten Committeja kannattaa kirjoittaa
+  - 8 eri committia
      
