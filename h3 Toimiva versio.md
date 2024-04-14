@@ -27,7 +27,7 @@
 * The staging area: Valmistelualue, joka tallentaa tietoja seuraavasta commitista.
 * Git directory: Hakemisto,  johon Git tallentaa metadataa ja objektitietokannan. Gitin tärkein osa, joka kopioidaan kloonatessa toisesta tietokoneesta
 
-3) git add &&  git commit; git pull && git push  - Selitä jokainen osa omista lähteistä
+3) git add &&  git commit; git pull && git push  - Selitä jokainen osa omista lähteistä https://medium.com/@itsmepankaj/git-workflow-add-commit-push-pull-69adf44cf812
    * Add: Ole valmis tallentamaan mutokset
    * Commit: Ole valmis tallentamaan muutokset ja kertomaan, mitä teit
    * Push: Jaa Commit - Pusketaan etäserverille, kuten GitHubbiin
@@ -41,4 +41,15 @@
   - Kaikki commitit tehty saman päivän aikana, samalta käyttäjältä (paitsi "improve usage instructions)
   - Simppelit demostraatiot siitä, mitä on tehty ja miten Committeja kannattaa kirjoittaa
   - 8 eri committia
-     
+ 
+  ## Varsinaiset tehtävät
+  a) Online - Tee uusi varasto, nimi summer, description summer
+    - Loin GitHubiin uuden repon, jonka nimeksi tulee summer ja descriptioniksi valitsin summer with Git
+    - Pittää muistaa laittaa julkiseksi, lisätä README file sekä valita lisenssi GNU General Public Licence v3.0
+    -  Sitten create repository
+
+![image](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/93875e1a-a08b-4c2b-8ab3-bb82be117805)
+
+b) Dolly. Kloonaa edellisesä kohdassa tehty varasto, tee muutoksia omalla koneella, puske palvelimelle ja näytä, että ne ilmestyvät webbiliittymään
+- Olin SSH - avaimen GitHubissa liittänyt jo valmiiksi virtuaalikoneelle, joten pitää ainoastaan kloonata se
+- 
