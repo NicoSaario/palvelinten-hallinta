@@ -43,10 +43,11 @@
   - 8 eri committia
  
   ## Varsinaiset tehtävät
- ### a) Online - Tee uusi varasto, nimi summer, description summer
-    - Loin GitHubiin uuden repon, jonka nimeksi tulee summer ja descriptioniksi valitsin summer with Git
-    - Pittää muistaa laittaa julkiseksi, lisätä README file sekä valita lisenssi GNU General Public Licence v3.0
-    -  Sitten create repository
+
+### a) Online - Tee uusi varasto, nimi summer, description summer
+- Loin GitHubiin uuden repon, jonka nimeksi tulee summer ja descriptioniksi valitsin summer with Git
+- Pittää muistaa laittaa julkiseksi, lisätä README file sekä valita lisenssi GNU General Public Licence v3.0
+-  Sitten create repository
 
 ![image](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/93875e1a-a08b-4c2b-8ab3-bb82be117805)
 
