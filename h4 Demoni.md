@@ -5,7 +5,7 @@ Kotitehtävät on tehty Palvelinten hallinta - kurssille ja löytyvät osoittees
 
 ## x) Tiivistelmät - Lue ja tiivistä. (Tässä x-alakohdassa ei tarvitse tehdä testejä tietokoneella, vain lukeminen tai kuunteleminen ja tiivistelmä riittää. Tiivistämiseen riittää muutama ranskalainen viiva.)
 
-1) Ensimmäisenä https://terokarvinen.com/2023/salt-vagrant/#infra-as-code---your-wishes-as-a-text-file
+### 1) Ensimmäisenä https://terokarvinen.com/2023/salt-vagrant/#infra-as-code---your-wishes-as-a-text-file
 - Kohdat
 * Infra as Code - Your wishes as a text file
 - Sisältö kohteeseen init.sls
@@ -45,7 +45,7 @@ base:
 $ sudo salt '*' state.apply
 ```
 
-2) Salt contributors: https://docs.saltproject.io/salt/user-guide/en/latest/topics/overview.html#rules-of-yaml ja siitä kohdat:
+### 2) Salt contributors: https://docs.saltproject.io/salt/user-guide/en/latest/topics/overview.html#rules-of-yaml ja siitä kohdat:
 * Rules of YAML
 - YAMLin tehtävänä on kääntää tietorakenne Python-dataksi Salttia varten
 
@@ -85,8 +85,27 @@ fruits:
    - oranges
 ```
 
+3) Dictionary - Kokoelma key: value määrityksiä ja luetteloita, esim:
+
+```
+dinner:
+  appetizer: shrimp cocktail
+  drink: sparkling water
+  entree:
+    - steak
+    - mashed potatoes
+    - dinner roll
+  dessert:
+    - chocolate cake
+```
 
 
 * List and dictionaries - YAML block structures
-* 
+- Jäsennetty lohkorakenteisiin
+- TÄYTYY SISENTÄÄ yhdellä tai enemmän _välilyönnillä_, kaksi _välilyöntiä_ on se vakio
+- Kokoelma lististä tai dictionarysta ilmaisee merkintä, jossa on yhdysviiva ja välilyönti ("- ")
+
+3) ### Karvinen 2018: https://terokarvinen.com/2018/04/03/pkg-file-service-control-daemons-with-salt-change-ssh-server-port/?fromSearch=karvinen%20salt%20ssh
+
+
 
