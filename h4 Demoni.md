@@ -107,6 +107,82 @@ dinner:
 - Kokoelma lististä tai dictionarysta ilmaisee merkintä, jossa on yhdysviiva ja välilyönti ("- ")
 
 3) ### Karvinen 2018: https://terokarvinen.com/2018/04/03/pkg-file-service-control-daemons-with-salt-change-ssh-server-port/?fromSearch=karvinen%20salt%20ssh
+- Oman järjestelmän asetustieto pohjana. Artikkelissa on jonkun toisen Lunix-version tiedosto
+- Voi hallita valtavaa määriä demoneja konfiguraation hallintajärjestelmällä.
+- Package-file-service: asenna ohjelmisto, korvaa asetustiedosto, potki demonia käyttääksesi uutta kokoonpanoa
+- Artikkelissa on yksinkertainen Salt-tila SSH-palvelinportin vaihtamiseksi
+- Ensin salt master-slave arkkitehtuuri
+- Masterille sshd.sls ja konffitiedoston pääkopio sshd_config
 
+SSH Staten luominen:
 
+```
+$ cat /srv/salt/sshd.sls
+openssh-server:
+ pkg.installed
+/etc/ssh/sshd_config:
+ file.managed:
+   - source: salt://sshd_config
+sshd:
+ service.running:
+   - watch:
+     - file: /etc/ssh/sshd_config
+``´
+- Tämä on lähes sama, kuin defaultti sshd_config -tiedosto openssh-serverin asentamisen jälkeen. Ainoastaan kommentit poistettu ja porttinumero laitettu "Port 8888"
+
+```
+$ cat /srv/salt/sshd_config
+# DON'T EDIT - managed file, changes will be overwritten
+Port 8888
+Protocol 2
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_dsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+UsePrivilegeSeparation yes
+KeyRegenerationInterval 3600
+ServerKeyBits 1024
+SyslogFacility AUTH
+LogLevel INFO
+LoginGraceTime 120
+PermitRootLogin prohibit-password
+StrictModes yes
+RSAAuthentication yes
+PubkeyAuthentication yes
+IgnoreRhosts yes
+RhostsRSAAuthentication no
+HostbasedAuthentication no
+PermitEmptyPasswords no
+ChallengeResponseAuthentication no
+X11Forwarding yes
+X11DisplayOffset 10
+PrintMotd no
+PrintLastLog yes
+TCPKeepAlive yes
+AcceptEnv LANG LC_*
+Subsystem sftp /usr/lib/openssh/sftp-server
+UsePAM yes
+```
+
+- Lisätään kaikille orjille
+
+```
+sudo salt '*' state.apply sshd
+```
+
+- Testataan
+* Käytetään jotain orjaa kohteena sen sijaan, eli korvataan seuraavassa kohtaa tuo 'tero.exmaple.com'
+
+```
+$ nc -vz tero.example.com 8888
+```
+
+- Tai
+
+```
+$ ssh -p 8888 tero@tero.example.com
+tero@tero.example.com's password:
+```
+
+- Jos SSH demoni vastaa portista 8888, homma rullaa ja kaikki toimii.
 
