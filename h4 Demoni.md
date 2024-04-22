@@ -101,6 +101,7 @@ dinner:
 
 
 * List and dictionaries - YAML block structures
+
 - Jäsennetty lohkorakenteisiin
 - TÄYTYY SISENTÄÄ yhdellä tai enemmän _välilyönnillä_, kaksi _välilyöntiä_ on se vakio
 - Kokoelma lististä tai dictionarysta ilmaisee merkintä, jossa on yhdysviiva ja välilyönti ("- ")
