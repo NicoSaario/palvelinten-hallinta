@@ -215,4 +215,4 @@ micro Vagrantfile
 - komennolla which powershell, näyttää, että käyttäisin v1.0
 - Joo nyt meni hermo, joten siirryn VirtualBoxin puolelle. Kokeilin asentaa muutaman kerran päivitykset ja uudelleen koko Shellin, mutta lähetään sit Linuxiin.
 - Ei tätä ongelmaa ollut aikaisemmmin, selvitän sen myöhemmin
-- 
+- Nyt on sitten VirtualBoxin, Debianin puolella ongelmaa. Ei anna syystä tai toisesta asentaa virtualboxia ja herjaa jatkuvasti Libvirt erroria sekä virtualboxin puuttumista, kun käytän vagrant up - komentoa
