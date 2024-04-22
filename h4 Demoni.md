@@ -127,7 +127,8 @@ sshd:
  service.running:
    - watch:
      - file: /etc/ssh/sshd_config
-``´
+```
+
 - Tämä on lähes sama, kuin defaultti sshd_config -tiedosto openssh-serverin asentamisen jälkeen. Ainoastaan kommentit poistettu ja porttinumero laitettu "Port 8888"
 
 ```
@@ -185,4 +186,5 @@ tero@tero.example.com's password:
 ```
 
 - Jos SSH demoni vastaa portista 8888, homma rullaa ja kaikki toimii.
+
 
