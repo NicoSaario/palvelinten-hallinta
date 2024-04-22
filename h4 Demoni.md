@@ -10,6 +10,8 @@ Aika: Itä-Euroopan normaaliaika Aikavyöhyke: Suomi (UTC+2) 23/04/2024
 
 Powershell + Vagrant
 
+Tässä tehtävässä myös VirtualBox + Debian 11
+
 ## x) Tiivistelmät - Lue ja tiivistä. (Tässä x-alakohdassa ei tarvitse tehdä testejä tietokoneella, vain lukeminen tai kuunteleminen ja tiivistelmä riittää. Tiivistämiseen riittää muutama ranskalainen viiva.)
 
 ### 1) Ensimmäisenä https://terokarvinen.com/2023/salt-vagrant/#infra-as-code---your-wishes-as-a-text-file
