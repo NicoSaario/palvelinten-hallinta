@@ -187,4 +187,32 @@ tero@tero.example.com's password:
 
 - Jos SSH demoni vastaa portista 8888, homma rullaa ja kaikki toimii.
 
+## Alkutoimet
+Ajattelin, että en tätä harjoitusta ole vielä kertaakaan kokeillut, testaan sitä nyt. Eli noudatan ohjeita https://terokarvinen.com/2023/salt-vagrant/#infra-as-code---your-wishes-as-a-text-file ja valmistelen automaattisesti yhden isännän ja sille kaksi orjaa.
 
+- Koska viime kerrasta on hetki, aloitan komennoilla
+
+```
+vagrant status
+vagrant up
+vagrant ssh
+```
+
+- Halusin nähdä, mitä koneita siellä oli muistissa ja nähtävästi aikaisemmin käyttämäni oli vielä tallella
+- Nyt on yhteys koneeseen
+- Voidaan skipata tuo virtuaaliympäristön asennus, sillä käytän jo windowssilla Vagranttia ja micro on asennettuna
+
+```
+mkdir saltdemo; cd saltdemo
+micro Vagrantfile
+```
+
+- Kopsataan tuosta Teron linkistä valmiiksi tehty Vagrantfile (kiitos Terolle!)
+- Nyt on viimeaikoina ilmestynyt sellaisia ongelmia, että saan ilmoituksen Powershellin version puutteellisuudesta ja sitä tässä alan selvittämään.. Kaikki toimi siis hyvin, kunnes löin komennon vagrant exit ja vagrant up, jolloin tuli seuraava ilmoitus
+
+![image](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/7ab1978d-2804-4218-b0ad-fcc51dc719f3)
+
+- komennolla which powershell, näyttää, että käyttäisin v1.0
+- Joo nyt meni hermo, joten siirryn VirtualBoxin puolelle. Kokeilin asentaa muutaman kerran päivitykset ja uudelleen koko Shellin, mutta lähetään sit Linuxiin.
+- Ei tätä ongelmaa ollut aikaisemmmin, selvitän sen myöhemmin
+- 
