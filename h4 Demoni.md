@@ -227,3 +227,9 @@ micro Vagrantfile
 - Nyt on sitten VirtualBoxin, Debianin puolella ongelmaa. Ei anna syystä tai toisesta asentaa virtualboxia ja herjaa jatkuvasti Libvirt erroria sekä virtualboxin puuttumista, kun käytän vagrant up - komentoa
 - Etsinyt netistä turhaan ratkaisua, tällä hetkellä päädyin tekemään Vagrantin asennustiedostolle repair - setupin ja katsotaan, korjaantuuko mikään. 15 - minuuttia myöhemmin se rullaa yhä. Yritin myös asennella manuaalisesti PowerShelliin uudet päivitykset, mutta se on jo up-to-date. Se toimii aina hetkellisesti tietokoneen käynnistyessä uudelleen.
 - Jos ongelma ei ratkea pian, luon uuden virtuaalikoneen ja yritän sitä kautta Linuxissa asennella kaikki alusta lähtien uudelleen. Nyt joudun kuitenkin tehtävän jättämään tähän toistaiseksi. Taitaa olla jo kolmas päivä, kun vikoja selvitellään. Sainpahan ainakin tiivistelmän tehtyä.
+
+
+- Update: 23/04 klo 09.07
+- Tunnilla pohdiskelin muistiota tehtäessä, että olisikohan ongelma pelkästään Vagrantissa.
+- Päädyin poistamaan sen, testaamaan PowerShelliä ja kappas. Se kaikista _yksinkertaisin_ ratkaisu oli se, mikä toimi. PowerShell ei siis enää herjannut mitään käynnistyessä, vaan käynnistyi normaalisti ja katsotaan tilanne Vagrantin asennuksen jälkeen.
+- Pääsen siis lopulta tekemään myöhemmin puuttuvat tehtävät. 
