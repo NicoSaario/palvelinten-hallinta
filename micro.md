@@ -57,3 +57,18 @@ Sinne sisään
 ```
 tree
 ```
+
+micro Makefile
+
+```
+all:
+  echo moi
+```
+
+- Ajetaan make - tulostaa ajetun komennon
+- Jännittävemmät komennot :D
+
+```
+sudo salt-call --local state.apply hello --file-root=srv/salt
+```
+
