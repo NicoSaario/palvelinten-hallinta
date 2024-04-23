@@ -72,3 +72,9 @@ all:
 sudo salt-call --local state.apply hello --file-root=srv/salt
 ```
 
+apache2:
+  pk.installed
+
+/var/www/html/index.html
+  file.managed
+   - source: "salt://apache/index.html"
