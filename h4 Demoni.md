@@ -234,3 +234,19 @@ micro Vagrantfile
 - Päädyin poistamaan sen, testaamaan PowerShelliä ja kappas. Se kaikista _yksinkertaisin_ ratkaisu oli se, mikä toimi. PowerShell ei siis enää herjannut mitään käynnistyessä, vaan käynnistyi normaalisti ja katsotaan tilanne Vagrantin asennuksen jälkeen.
 - Pääsen siis lopulta tekemään myöhemmin puuttuvat tehtävät.
 - Jälleen UPDATE: Testi toimi vain hetken ja kaatoi jälleen koko PowerShellin
+- Kokeiltu on vaikka ja mitä, mutta raportoin tästä eteenpäin:
+
+- Kokeilin komentoja
+
+```
+vagrant plugin update
+```
+- Päivittää vagrantin plug-init
+
+```
+vagrant plugin expunge --reinstall
+```
+
+- Poistaa pluginit ja yrittää asentaa niitä uudelleen
+- Tein myös polun 
+
