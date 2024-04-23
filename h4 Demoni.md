@@ -232,4 +232,5 @@ micro Vagrantfile
 - Update: 23/04 klo 09.07
 - Tunnilla pohdiskelin muistiota tehtäessä, että olisikohan ongelma pelkästään Vagrantissa.
 - Päädyin poistamaan sen, testaamaan PowerShelliä ja kappas. Se kaikista _yksinkertaisin_ ratkaisu oli se, mikä toimi. PowerShell ei siis enää herjannut mitään käynnistyessä, vaan käynnistyi normaalisti ja katsotaan tilanne Vagrantin asennuksen jälkeen.
-- Pääsen siis lopulta tekemään myöhemmin puuttuvat tehtävät. 
+- Pääsen siis lopulta tekemään myöhemmin puuttuvat tehtävät.
+- Jälleen UPDATE: Testi toimi vain hetken ja kaatoi jälleen koko PowerShellin
