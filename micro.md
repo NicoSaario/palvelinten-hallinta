@@ -20,3 +20,40 @@
 - micro -plugin install runit
 - foo.py ja ctrl-e runit makeup makeupgb
 - palettero
+
+# Varastorakennus (Konffataan One workstation with Salt)
+
+Eli siis GitHub - repo ja sinne tavaraa sisään
+```
+sudo salt-call --local
+```
+
+```
+git clone ssh@
+```
+
+- Tehdään Hello Woorld
+
+```
+mkdir srv/salt -p
+cd srv
+cd salt
+mkdir hello
+nano init.sls
+sudo salt-call --local state.apply hello
+```
+
+```
+sudo salt-call --local state.apply heippa --file-root=srv/salt
+```
+
+Sinne sisään
+
+/tmp/saltharjoitus:
+  file.managed
+
+- Nähdään hakemistopuu
+  
+```
+tree
+```
