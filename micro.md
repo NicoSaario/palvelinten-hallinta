@@ -83,3 +83,17 @@ apache2:
 /var/www/html/index.html
   file.managed
    - source: "salt://apache/index.html"
+
+windows pkg.install
+
+```
+salt-call --local winrepo.update_git_repos
+```
+
+```
+salt-call --local pkg.fastreload
+```
+
+```
+salt-call --local state.single pkg.installed 7zip
+```
