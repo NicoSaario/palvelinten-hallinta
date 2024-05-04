@@ -250,4 +250,53 @@ sudo apt-get install salt-master
 
 - Alkutoimet microlle, päivityksille ja salt-masterille
 
+## a) Hello SLS! Tee Hei maailma -tila kirjoittamalla se tekstitiedostoon, esim /srv/salt/hello/init.sls.
+
+- Noudatan aika Raamatullisesti https://terokarvinen.com/2024/hello-salt-infra-as-code/ ohjeita, sillä joutuu hieman palauttamaan mieleen tuon Windows - sekoilun jälkeen, miten kaikki taas toimii
+- Micro oli jo asennettu, joten Create folder - kohtaan
+- Luodaan uusi moduuli "hello", jossa "hello/" - kansioon tulee kaikki moduuliin liittyvät asiat - Salt - koodi ja kaikki tiedostot tai templatet.
+
+```
+sudo mkdir -p /srv/salt/hello
+```
+- Loin ohjeesta poiketen hello ilman '/'. Joka tapauksessa se näkyi tiedostossa, mutta poistan varmuuden vuoksi, jotta nämäkin palautuu mieleen paremmin
+
+```
+sudo rmdir -p /srv/salt/hello
+```
+
+```
+sudo mkdir -p /srv/salt/hello/
+```
+
+- Sit navigoidaan luotuun kansioon
+
+```
+cd /srv/salt/hello/
+```
+
+- Tehdään sinne sisään idempotenttia koodia Saltilla
+
+```
+/tmp/hellonico:
+file.managed
+```
+
+- Ajetaan se
+- Kuvasta näkyy, että tiedosto "/tmp/hellonico created" ja Succeeded 1 (changed=1), joten se toimii ja teki, mitä pyydettiin.
+
+<img width="573" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/d9157787-3a20-4017-85f4-7ee5861487f6">
+
+
+- Tarkistetaan vielä, että se todellakin on ilmestynyt sinne. Samalla vielä komentohistoria.
+
+```
+ls /tmp/hellonico
+```
+
+<img width="249" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/dbf00705-3644-4784-bdbf-b33d86916f45">
+ 
+<img width="272" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/949ce54c-97a2-428c-bc12-98fe2ec9b4b9">
+
+
 
