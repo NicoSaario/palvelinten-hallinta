@@ -197,8 +197,6 @@ tero@tero.example.com's password:
 - Jos SSH demoni vastaa portista 8888, homma rullaa ja kaikki toimii.
 
 ## Alkutoimet
-Ajattelin, että en tätä harjoitusta ole vielä kertaakaan kokeillut, testaan sitä nyt. Eli noudatan ohjeita https://terokarvinen.com/2023/salt-vagrant/#infra-as-code---your-wishes-as-a-text-file ja valmistelen automaattisesti yhden isännän ja sille kaksi orjaa.
-
 - Koska viime kerrasta on hetki, aloitan komennoilla
 
 ```
@@ -207,16 +205,6 @@ vagrant up
 vagrant ssh
 ```
 
-- Halusin nähdä, mitä koneita siellä oli muistissa ja nähtävästi aikaisemmin käyttämäni oli vielä tallella
-- Nyt on yhteys koneeseen
-- Voidaan skipata tuo virtuaaliympäristön asennus, sillä käytän jo windowssilla Vagranttia ja micro on asennettuna
-
-```
-mkdir saltdemo; cd saltdemo
-micro Vagrantfile
-```
-
-- Kopsataan tuosta Teron linkistä valmiiksi tehty Vagrantfile (kiitos Terolle!)
 - Nyt on viimeaikoina ilmestynyt sellaisia ongelmia, että saan ilmoituksen Powershellin version puutteellisuudesta ja sitä tässä alan jälleen selvittämään.. Kaikki toimi siis hyvin, kunnes löin komennon vagrant exit ja vagrant up, jolloin tuli seuraava ilmoitus
 
 ![image](https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/7ab1978d-2804-4218-b0ad-fcc51dc719f3)
@@ -248,5 +236,18 @@ vagrant plugin expunge --reinstall
 ```
 
 - Poistaa pluginit ja yrittää asentaa niitä uudelleen
-- Tein myös polun 
+
+- Update 5/5/2024
+- Noin 400 - foorumia läpikäyneenä totesin, että fresh startti Windowssille on luultavasti ainoa vaihtoehto. Backupit ja koko kone tyhjäksi.
+
+  <img width="577" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/a3806760-625f-4db7-a92f-054c9e2f10be">
+
+```
+sudo apt-get update
+sudo apt-get install micro
+sudo apt-get install salt-master
+```
+
+- Alkutoimet microlle, päivityksille ja salt-masterille
+
 
