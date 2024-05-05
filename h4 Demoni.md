@@ -438,12 +438,33 @@ sudoedit top.sls
 sudo mkdir relax hello testi
 ```
 
-Luon relax - kanisoon init.sls - tiedoston ja sen sisään
+Luon relax - kansioon init.sls - tiedoston ja sen sisään
 
-<img width="375" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/3324b9d1-34a6-4f9e-8b82-6a6d31734c78">
+<img width="377" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/b546f99d-6e6d-45ad-8bec-1ce77aac9523">
+
 
 
 Luon myös testi - kansioon seuraavanlaisen tiedoston:
 
-<img width="380" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/5bf39325-5b74-4da8-9226-716206528292">
+<img width="383" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/13804f65-c35c-4dfd-a1fe-9714e6b33c16">
+
+Seuraavaksi käytän komentoa ja kokeilen, toimivatko tehdyt muutokset:
+
+```
+sudo salt '*' state.apply
+```
+
+
+<img width="476" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/4af95b8e-f7b1-4fdc-a605-8ce81ca8704c">
+
+<img width="497" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/652d66dc-b621-4e29-b899-6e23cb0ed8ef">
+
+Eli kaikki muut muutokset menivät läpi - micron asennus, hellonico ja hellotestin luomiset, mutta apachen asennus ei tällä kertaa mennyt läpi. Hyvä sinänsä, sillä nähtävästi keulin hieman ja sen asennus tulee seuraavassa tehtävässä. Saan jatkuvasti virheilmoituksen tuosta t001 - minionin "did not returnista", tämä johtuu todennäköisesti siitä, että aluksi laitoin väärän ID:n tiedostoon, jolloin konffattiin minionin ID. Vaihdoin sen myöhemmin, jolloin master vastaanotti 2 eri avainta, jotka molemmat olivat samalta orjalta.
+
+
+
+
+
+
+
 
