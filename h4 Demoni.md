@@ -530,26 +530,54 @@ EDITOR=micro sudoedit init.sls
 Seuraavat tekstit sinne sisään:
 
 ```
-apache2:
-pk.installed
-
-
+  apache2:
+   pkg.installed
+ 
 apache2/sites-available/...
-file.managed:
-	-source: "salt://apache/oma.conf" - aina samalla tyylillä
+   file.managed:
+   -source: "salt://publicsites/saltti.conf"
 
-/etc/apache2/sites-enabled/oma.conf:
-  file.symlink:
-    - target: "/etc/apache2/sites-abailable/oma.conf"
+ /etc/apache2/sites-enabled/saltti.conf:
+   file.symlink:
+    - target: "/etc/apache2/sites-available/saltti.conf"
 /etc/apache2/sites-enabled/000-default.conf:
-  file.absent 
+ file.absent
 
 apache2.service
-service.running:
-  - watch: 
-	- file: /etc/apache2/sites-available/oma.conf
-	- file: /etc/apache2/sites-enabled/000-default.conf
-	- file: /etc/apache2/sites-enabled/oma.conf
+ service.running:
+- watch:
+     - file: /etc/apache2/sites-available/saltti.conf
+    - file: /etc/apache2/sites-enabled/000-default.conf
+     - file: /etc/apache2/sites-enabled/saltti.conf
+
 ```
 
+<img width="488" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/534d0b2e-869d-459a-8a8d-de58585555b1">
+
+
+```
+sudo salt-call --local state.apply
+```
+
+<img width="383" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/b29ac01c-b1a5-4f1d-be66-ec72df2b5ce6">
+
+Muistio:
+
+```
+sudo salt-key -A #avainten haku masterilla
+``` 
+
+```
+sudo salt-key -L #Näkee kaikki avaimet
+```
+
+```
+sudo salt-key -d #ja perään minionin/avaimen id
+```
+
+- Tuli siis virheilmoitus, ettei minionin avainta hyväksytä ja lähdin selvittämään sen uudelleen laittoa
+- Käytän ylläolevia komentoja ja sain sen toimimaan
+- Sain tällaisen ilmoituksen enkä kyllä rehellisesti tiedä, miten edetä
+
+<img width="338" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/42211732-e19b-45e4-a305-5c9523eec7b0">
 
