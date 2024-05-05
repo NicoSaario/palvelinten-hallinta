@@ -278,6 +278,11 @@ cd /srv/salt/hello/
 - Tehdään sinne sisään idempotenttia koodia Saltilla
 
 ```
+sudoedit init.sls
+```
+
+
+```
 /tmp/hellonico:
 file.managed
 ```
@@ -297,6 +302,37 @@ ls /tmp/hellonico
 <img width="249" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/dbf00705-3644-4784-bdbf-b33d86916f45">
  
 <img width="272" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/949ce54c-97a2-428c-bc12-98fe2ec9b4b9">
+
+
+## b) Top. Tee top.sls niin, että useita valitsemiasi tiloja ajetaan automaattisesti, esim komennolla "sudo salt '*' state.apply" tai "sudo salt-call --local state.apply".
+
+Tehdään muutama eri kansiorakenne, ajattelin samalla kokeilla tehdä monta kerrallaan ja katsotaan, mitä käy
+
+```
+cd /srv/salt/
+sudoedit top.sls
+sudo salt '*' state.apply top.sls
+```
+
+- Palauttaa ajosta:
+<img width="328" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/e085d13e-cc91-4209-9079-9d2ca8b2a318">
+
+- Tehdään siis toimiva master - minion - kombinaatio
+
+```
+sudo apt-get -y install salt-master
+hostname -I
+```
+
+<img width="158" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/47bcb490-2efc-4c53-b5b2-47ac3c5bebee">
+
+```
+sudoedit /etc/salt/minion
+
+master: 10.0.2.15
+id: niso
+
+```
 
 
 
