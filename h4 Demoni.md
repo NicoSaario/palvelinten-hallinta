@@ -306,7 +306,7 @@ ls /tmp/hellonico
 
 ## b) Top. Tee top.sls niin, että useita valitsemiasi tiloja ajetaan automaattisesti, esim komennolla "sudo salt '*' state.apply" tai "sudo salt-call --local state.apply".
 
-Tehdään muutama eri kansiorakenne, ajattelin samalla kokeilla tehdä monta kerrallaan ja katsotaan, mitä käy
+Tehdään muutama eri top.sls - tiedosto
 
 ```
 cd /srv/salt/
@@ -422,6 +422,28 @@ Ja hyväksytään sieltä
 
 <img width="565" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/fb8e5338-5803-41a8-9d4b-f9eb14cd7c33">
 
+Sitten top.sls - tiedoston kimppuun vihdosta viimein.
+
+Luodaan tiedosto top.sls ja laitetaan sinne muutama rimpsu sisään:
+
+```
+sudoedit top.sls
+```
+
+<img width="282" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/9da84f58-9d19-489d-899d-cf426373b45c">
+
+- Loin kansiot hello, relax, testi
+
+```
+sudo mkdir relax hello testi
+```
+
+Luon relax - kanisoon init.sls - tiedoston ja sen sisään
+
+<img width="375" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/3324b9d1-34a6-4f9e-8b82-6a6d31734c78">
 
 
+Luon myös testi - kansioon seuraavanlaisen tiedoston:
+
+<img width="380" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/5bf39325-5b74-4da8-9226-716206528292">
 
