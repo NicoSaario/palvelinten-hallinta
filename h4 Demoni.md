@@ -514,10 +514,42 @@ micro index.html
 curl localhost
 ```
 
+<img width="398" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/15527e73-3616-4a60-b249-127222309157">
+
 Ja homma toimii!! Kiva huomata, että jotain on vielä muistissa ja meni kyllä todella nopeasti käsin asennus.
 
-<img width="367" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/fe4bd9a2-d134-4d1a-b77b-5a7deebfb525">
+- Nyt yritetään automatisoida se
+- Tein Teron tunnilla pienet muistiinpanot ja yritän sen perusteella ratkaista tämän
+
+```
+sudo mkdir -p /srv/salt/apache
+cd /srv/salt/apache
+EDITOR=micro sudoedit init.sls
+```
+
+Seuraavat tekstit sinne sisään:
+
+```
+apache2:
+pk.installed
 
 
+apache2/sites-available/...
+file.managed:
+	-source: "salt://apache/oma.conf" - aina samalla tyylillä
+
+/etc/apache2/sites-enabled/oma.conf:
+  file.symlink:
+    - target: "/etc/apache2/sites-abailable/oma.conf"
+/etc/apache2/sites-enabled/000-default.conf:
+  file.absent 
+
+apache2.service
+service.running:
+  - watch: 
+	- file: /etc/apache2/sites-available/oma.conf
+	- file: /etc/apache2/sites-enabled/000-default.conf
+	- file: /etc/apache2/sites-enabled/oma.conf
+```
 
 
