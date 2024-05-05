@@ -581,3 +581,106 @@ sudo salt-key -d #ja perään minionin/avaimen id
 
 <img width="338" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/42211732-e19b-45e4-a305-5c9523eec7b0">
 
+
+## d) SSHouto. Lisää uusi portti, jossa SSHd kuuntelee.
+- Teen tämän suoraan Teron linkistä https://terokarvinen.com/2018/04/03/pkg-file-service-control-daemons-with-salt-change-ssh-server-port/?fromSearch=karvinen%20salt%20ssh
+- Luon siis tiedostot sshd.sls ja sshd_config ohjeiden mukaan
+- sshd.sls tulee seuraavat sisään:
+
+```
+openssh-server:
+ pkg.installed
+/etc/ssh/sshd_config:
+ file.managed:
+   - source: salt://sshd_config
+sshd:
+ service.running:
+   - watch:
+     - file: /etc/ssh/sshd_config
+```
+
+ja sshd_config sisään, nyt jätetään vielä portti 22 auki ja lisätään se tuohon ihan alkuun: 'Jos käytät Vagrantia, muista jättää portti 22/tcp auki - se on oma yhteytesi koneeseen. SSHd:n asetustiedostoon voi tehdä yksinkertaisesti kaksi "Port" riviä, molemmat portit avataan.'- Tero
+
+```
+# DON'T EDIT - managed file, changes will be overwritten
+#Port 22
+Port 8888
+Protocol 2
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_dsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+UsePrivilegeSeparation yes
+KeyRegenerationInterval 3600
+ServerKeyBits 1024
+SyslogFacility AUTH
+LogLevel INFO
+LoginGraceTime 120
+PermitRootLogin prohibit-password
+StrictModes yes
+RSAAuthentication yes
+PubkeyAuthentication yes
+IgnoreRhosts yes
+RhostsRSAAuthentication no
+HostbasedAuthentication no
+PermitEmptyPasswords no
+ChallengeResponseAuthentication no
+X11Forwarding yes
+X11DisplayOffset 10
+PrintMotd no
+PrintLastLog yes
+TCPKeepAlive yes
+AcceptEnv LANG LC_*
+Subsystem sftp /usr/lib/openssh/sftp-server
+UsePAM yes
+```
+
+Näiden jälkeen 
+
+```
+sudo salt '*' state.apply sshd
+```
+
+<img width="354" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/323edfcb-fa9f-4146-a0df-92a0dc259b19">
+
+<img width="389" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/07df5c27-da3e-4c75-8d66-43f9c18466fd">
+
+- Testataan vielä ohjeen mukaan
+
+```
+nc -vc t002 8888
+```
+
+Joo ei toimi, heittää virheen "t002: forward host lookup failed: Unknown host"
+
+- Mennyt jossain kohtaa jo, mistä taisinkin mainita nuo avaimet vähän sekaisin. Sit muuttelin t001 id ja vahingossa muuttelin masterin konffitiedostoa, joten siinä taitaa piillä seuraavan virheilmoituksen syy:
+
+<img width="476" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/6dbf0ddf-d488-4b4b-8e75-25468dfc109e">
+
+- Teen nyt niin, että poistelen nuo vanhat avaimet, käyn /etc/salt/minion - konffissa ja teen sinne nyt t005, jotta kaikki ei oo ihan hujan hajan. Katsotaan, muuttuuko mikään. Komentoina aikaisemmat "muistio"-kohdasta:
+
+<img width="386" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/10a3e50e-2d19-49b0-bfb5-049292ec0502">
+
+Erroria jälleen
+
+<img width="469" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/e63a2e5b-36b7-486e-93d7-45963fb6a99b">
+
+- Noniiin! Muutin komentoa muotoon:
+
+```
+sudo salt-call --local state.apply sshd
+```
+
+<img width="332" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/62660fd5-ed3a-4add-b655-4889d0692cab">
+
+<img width="446" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/e1bf4a3e-ad03-4bce-a121-ad8f3051bcc9">
+
+- Mutta eipä vieläkään tuo testaus toimi
+
+
+### Lähteet: 
+
+- Salt contributors: https://docs.saltproject.io/salt/user-guide/en/latest/topics/overview.html#rules-of-yaml (luettu 23/04/2024)
+- Tero Karvinen: https://terokarvinen.com/2023/salt-vagrant/#infra-as-code---your-wishes-as-a-text-file (luettu 23/04/2024)
+- Karvinen 2018: https://terokarvinen.com/2018/04/03/pkg-file-service-control-daemons-with-salt-change-ssh-server-port/?fromSearch=karvinen%20salt%20ssh (luettu 06/05/2024)
+- https://terokarvinen.com/2021/two-machine-virtual-network-with-debian-11-bullseye-and-vagrant/ (luettu 06/05/2024)
