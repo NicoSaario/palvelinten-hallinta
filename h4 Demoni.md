@@ -214,7 +214,7 @@ vagrant ssh
 - Ei tätä ongelmaa ollut aikaisemmmin, selvitän sen myöhemmin
 - Nyt on sitten VirtualBoxin, Debianin puolella ongelmaa. Ei anna syystä tai toisesta asentaa virtualboxia ja herjaa jatkuvasti Libvirt erroria sekä virtualboxin puuttumista, kun käytän vagrant up - komentoa
 - Etsinyt netistä turhaan ratkaisua, tällä hetkellä päädyin tekemään Vagrantin asennustiedostolle repair - setupin ja katsotaan, korjaantuuko mikään. 15 - minuuttia myöhemmin se rullaa yhä. Yritin myös asennella manuaalisesti PowerShelliin uudet päivitykset, mutta se on jo up-to-date. Se toimii aina hetkellisesti tietokoneen käynnistyessä uudelleen.
-- Jos ongelma ei ratkea pian, luon uuden virtuaalikoneen ja yritän sitä kautta Linuxissa asennella kaikki alusta lähtien uudelleen. Nyt joudun kuitenkin tehtävän jättämään tähän toistaiseksi. Taitaa olla jo kolmas päivä, kun vikoja selvitellään. Sainpahan ainakin tiivistelmän tehtyä.
+- Jos ongelma ei ratkea pian, luon uuden virtuaalikoneen ja yritän sitä kautta Linuxissa asennella kaikki alusta lähtien uudelleen. Nyt joudun kuitenkin tehtävän jättämään tähän toistaiseksi. Taitaa olla jo kolmas päivä, kun vikoja selvitellään. Sainpahan ainakin tiivistelmän tehtyä. /edit, tästä huomaa sen pienen epätoivon, että yritin saada virtualisointia virtualisoinnin sisään ihan hirveästi ajattelematta mitään
 
 
 - Update: 23/04 klo 09.07
@@ -234,11 +234,12 @@ vagrant plugin update
 ```
 vagrant plugin expunge --reinstall
 ```
+- Ja niin miljoona muuta, etten tähän rapsaan niitä edes luvennut lajittelemaan, jottei kaikki saisi päänsärkyä tätä lukiessa
 
 - Poistaa pluginit ja yrittää asentaa niitä uudelleen
 
 - Update 5/5/2024
-- Noin 400 - foorumia läpikäyneenä totesin, että fresh startti Windowssille on luultavasti ainoa vaihtoehto. Backupit ja koko kone tyhjäksi.
+- Noin 400 - foorumia läpikäyneenä totesin, että fresh startti Windowssille on luultavasti ainoa vaihtoehto. Backupit ja koko kone tyhjäksi. Nyt mennään!
 
   <img width="577" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/a3806760-625f-4db7-a92f-054c9e2f10be">
 
@@ -684,3 +685,4 @@ sudo salt-call --local state.apply sshd
 - Tero Karvinen: https://terokarvinen.com/2023/salt-vagrant/#infra-as-code---your-wishes-as-a-text-file (luettu 23/04/2024)
 - Karvinen 2018: https://terokarvinen.com/2018/04/03/pkg-file-service-control-daemons-with-salt-change-ssh-server-port/?fromSearch=karvinen%20salt%20ssh (luettu 06/05/2024)
 - https://terokarvinen.com/2021/two-machine-virtual-network-with-debian-11-bullseye-and-vagrant/ (luettu 06/05/2024)
+- https://terokarvinen.com/2024/configuration-management-2024-spring/ (luettu 06/05/2024)
