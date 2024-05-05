@@ -334,5 +334,94 @@ id: niso
 
 ```
 
+- Pikku päivitys tähän väliin. Raportti on raportti, eli kaikki vaiheet tulee näkyviin.
+- Mutkia taas matkassa ja ihmettelin hetken, mitä ees oon tekemässä
+- Tajusin sit samalla, etten ole laittanu edes sitä VagrantFilen konffia sisään ja saisin sitä kautta suoraan homman rullaamaan
+- Joten päädyin tuohoamaan koko edellisen koneen ja tekemään sen
+- Vaiheet:
+
+```
+exit #takas OS
+destroy vagrant
+mkdir twohost; cd twohost/
+vagrant init
+start notepad++ ./Vagrantfile/ #koska Windows
+Teron konffi sisään - krediitit sinne jälleen!
+```
+
+https://terokarvinen.com/2021/two-machine-virtual-network-with-debian-11-bullseye-and-vagrant/
+
+```
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+# Copyright 2019-2021 Tero Karvinen http://TeroKarvinen.com
+
+$tscript = <<TSCRIPT
+set -o verbose
+apt-get update
+apt-get -y install tree
+echo "Done - set up test environment - https://terokarvinen.com/search/?q=vagrant"
+TSCRIPT
+
+Vagrant.configure("2") do |config|
+	config.vm.synced_folder ".", "/vagrant", disabled: true
+	config.vm.synced_folder "shared/", "/home/vagrant/shared", create: true
+	config.vm.provision "shell", inline: $tscript
+	config.vm.box = "debian/bullseye64"
+
+	config.vm.define "t001" do |t001|
+		t001.vm.hostname = "t001"
+		t001.vm.network "private_network", ip: "192.168.88.101"
+	end
+
+	config.vm.define "t002", primary: true do |t002|
+		t002.vm.hostname = "t002"
+		t002.vm.network "private_network", ip: "192.168.88.102"
+	end
+	
+end
+
+```
+
+- Näinkin, että Tero oli jo päivitellyt sinne kolmen koneen konffit, mutta nyt mennään tällä
+- Nyt tulee toi sama rimpsu noista Salt Quickstartista, jonka tein jo aiemmin - turhaan
+- Ohje noudattaa jälleen hyvin Raamatullisesti https://terokarvinen.com/2018/salt-quickstart-salt-stack-master-and-slave-on-ubuntu-linux/
+
+Hyppäsin t001 - koneelle
+
+```
+vagrant ssh t001
+sudo apt-get update
+sudo apt-get -y install salt-master
+hostname -I
+```
+
+- Palauttaa arvot 10.0.2.15 ja 192.168.12.100, jotka käsittelin aikaisemmassa repossa jo. Repo löytyy tuosta https://github.com/NicoSaario/palvelinten-hallinta/blob/main/h2%20Soitto%20kotiin.md
+- Sit orjakoneelle eli t002
+
+```
+vagrant ssh t001
+sudo apt-get update
+sudo apt-get -y install salt-minion
+sudoedit /etc/salt/minion
+```
+
+- Sisään masterin t001 iippari ja id:t002
+
+```
+sudo systemctl restart salt-minion.service
+```
+
+t002:
+
+```
+sudo salt-key -A
+```
+
+Ja hyväksytään sieltä
+
+<img width="565" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/fb8e5338-5803-41a8-9d4b-f9eb14cd7c33">
+
+
 
 
