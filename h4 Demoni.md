@@ -518,7 +518,7 @@ curl localhost
 
 Ja homma toimii!! Kiva huomata, että jotain on vielä muistissa ja meni kyllä todella nopeasti käsin asennus.
 
-- Nyt yritetään automatisoida se
+### Nyt yritetään automatisoida se
 - Tein Teron tunnilla pienet muistiinpanot ja yritän sen perusteella ratkaista tämän
 
 ```
