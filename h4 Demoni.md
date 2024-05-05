@@ -459,11 +459,64 @@ sudo salt '*' state.apply
 
 <img width="497" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/652d66dc-b621-4e29-b899-6e23cb0ed8ef">
 
+Testasin samalla orjakoneella t002, että micron asennus onnistui ja menivätkö ne tosiaan läpi. Tein vain komennon ```micro index.html```
+
+<img width="469" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/37adb22d-d619-4e56-823e-c92fd888dde2">
+
+
+
+
 Eli kaikki muut muutokset menivät läpi - micron asennus, hellonico ja hellotestin luomiset, mutta apachen asennus ei tällä kertaa mennyt läpi. Hyvä sinänsä, sillä nähtävästi keulin hieman ja sen asennus tulee seuraavassa tehtävässä. Saan jatkuvasti virheilmoituksen tuosta t001 - minionin "did not returnista", tämä johtuu todennäköisesti siitä, että aluksi laitoin väärän ID:n tiedostoon, jolloin konffattiin minionin ID. Vaihdoin sen myöhemmin, jolloin master vastaanotti 2 eri avainta, jotka molemmat olivat samalta orjalta.
 
 
+##  c) Apache easy mode. Asenna Apache, korvaa sen testisivu ja varmista, että demoni käynnistyy.
+Ensin käsin, vasta sitten automaattisesti.
 
+Tämän onneksi pitäisi olla jo hyvin muistissa kurssilta Linux - Palvelimet ja voin hyödyntää myös aikaisempia repoja
 
+```
+sudo apt-get update
+sudo apt-get install apache2
+sudo apt-get install curl
+```
+
+defaultti pois päältä
+navigoidaan apache2-kansioon ulkomuistista
+
+```
+cd /etc/apache2/sites-enabled
+sudo a2dissite 000-default.conf
+```
+
+Apachen defaulttisivu on nyt näkyvissä
+
+<img width="473" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/7d623013-7641-4211-b24e-64ce1a91dd15">
+
+Sit mennään tekeen sivua - lainailen vähän aikaisempaa ohjetta täältä https://github.com/NicoSaario/Linux_Palvelimet/blob/main/H5%20Koko%20juttu.md
+
+- Eli teen kansion webbisaiteille, editoin konffitiedoston osoittamaan oikeisiin polkuihin
+
+```
+sudo mkdir -p /etc/publicsites/saltti.example.com/
+EDITOR=micro sudoedit saltti.example.com.conf
+sudo a2ensite saltti.example.com.conf
+sudo systemctl restart apache2
+curl localhost
+```
+
+<img width="367" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/9fc48eaa-7d52-4dbf-8b1b-fdaff7e53347">
+
+Testisivu on nyt korvattu, pitää vain laittaa jotain tekstiä sisään ja katsoa, mitä tapahtuu.
+Navigoidaan ja tehdään index.html
+
+```
+micro index.html
+curl localhost
+```
+
+Ja homma toimii!! Kiva huomata, että jotain on vielä muistissa ja meni kyllä todella nopeasti käsin asennus.
+
+<img width="367" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/fe4bd9a2-d134-4d1a-b77b-5a7deebfb525">
 
 
 
