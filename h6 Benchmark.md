@@ -143,6 +143,65 @@ Se meni läpi enkä itse asiassa sitä lähde edes poistamaan, koska satun sitä
 
 <img width="411" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/64eb4c8a-bc33-425d-81cc-5b0555d578a8">
 
+
 <img width="893" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/1e469cc7-199e-46af-a214-13061aa08a0e">
 
+Lämmin halaus ketulta ja eteenpäin.
 
+
+## b) b) Benchmark. Etsi 3-7 keskitetyn hallinnan projektia, esimerkiksi tämän kurssin "Oma moduli" lopputyötä.
+Tässä ei tehdä testejä, vaan arvioidaan töitä kotisivujen perusteella. Listataan:
+- Tarkoitus (business purpose)
+- Lisenssi (nimi, missä se lukee ja mitä se tarkoittaa)
+- Tekijä ja vuosi
+- Riippuvuudet (Alusta, verkkoympäristö tms.)
+- Mikä on kiinnostavaa
+- Avoimet kysymykset ja muut huomiot
+
+
+- Aloitin yksinkertaisella googletuksella "palvelinten hallinta oma moduuli".
+
+### viivivepsalainen OMA-PROJEKTI-TILA
+
+* Moduulin yksinkertainen tarkoitus on helpottaa vanhemman ihmisen arkea ja asentaa tarpeellinen sovellus saltin/nettisivun avulla. Lopuksi siitä tuli Firefoxin asennus, joka konfiguroi kotisivuksi Netflixin
+* Lisenssi GPL-3.0 licence, joka näkyy heti README - vieressä ja tarkoittaa sitä, että se on avoin ja se suojaa ohjelmiston vapauksia, edistää avoimen lähdekoodin kehitystä ja jakelua https://www.gnu.org/licenses/gpl-3.0.html
+* Tekijä oletettavasti Viivi Vepsäläinen, vuosi 2022
+* Riippuvuutena joutuu tämä vanhempi ihminen käyttämään Linuxia. Se voi toki olla jopa mahdollisuus!
+* Kiinnostavaa itselleni oli se, että kaikki oli tehty README - tiedoston sisään
+* Siisti idea!
+
+https://github.com/viivivepsalainen/OMA-PROJEKTI-TILA?tab=readme-ov-file
+
+
+### ottotoivanen Oma moduli
+* Ideana tehdä master-kone, jolla hallitaan kahta minionia, joille asennetaan Steam ja Discord automaattisesti
+* Lisenssiä en kyllä äkkiseltään löytänyt, mutta yleisesti Wordpressissä käytetään kyllä GPL-3.0 (ChatGPT)
+* Oletettavasti Otto Toivanen tekijänä, nimimerkin perusteella
+* Ei ihan kauheasti selvinny riippuvuuksiakaan, paitsi se, että automatisoinnin sijaan Steamin Installeri piti painaa manuaalisesti käyntiin
+* Mielenkiintoinen idea ja kiinnosti lähinnä tuo 'valmis paketti tietylle ryhmälle'
+
+https://ottotoivanen.wordpress.com/2020/05/21/palvelinten-hallinta-h7/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Lähteet
+Oma moduli, ottotoivanen: https://ottotoivanen.wordpress.com/2020/05/21/palvelinten-hallinta-h7/ (Luettu 7.05.2024)
+OMA-PROJEKTI-TILA, viivivepsalainen: https://github.com/viivivepsalainen/OMA-PROJEKTI-TILA?tab=readme-ov-file (Luettu 7.05.2024)
+GNU General Public License: https://www.gnu.org/licenses/gpl-3.0.html (Luettu 7.05.2024)
+ChatGPT
