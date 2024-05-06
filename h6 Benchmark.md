@@ -101,4 +101,35 @@ salt-call --local pkg.install "firefox_x64" version=74.0
 # a) Paketti Windowsia. Asenna Windowsiin tai Macciin ohjelmia Saltin pkg.installed -funktiolla.
 - Itse en näitä tunnilla päässyt tekemään Windowsin ongelmista johtuen, joten tässä testaillaan ensimmäistä kertaa
 - Asentelen Saltin Windowssille seuraavalta sivulta: https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/windows.html#install-salt-on-windows
-- 
+-  Nyt meni pikkasen huuruun taas. Siis törmäsin ongelmaan, että raportoin tässä samalla ja keulin yhden ainoan komennon. Eli siis tässä kävi niin, että suoritin komennon ```salt-call --local winrepo.update_git_repos``` ja se heitti jatkuvaa erroria. Lähdin selvittämään vikaa jälleen noin 400 eri foorumeilta ja käytin ChatGPT:n apua analysoinnissa, koska olin tässä kohtaa jo lopen kyllästynyt Windowsin kanssa pelleilemiseen aikaisempien ongelmien tiimoilta.
+
+ChatGPT:n antama komento
+
+```
+salt-call --local winrepo.update_git_repos --log-level=debug
+```
+
+Antoi listan 
+
+<img width="536" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/c75efd04-3fe4-46a2-a9cc-ae575c245867">
+
+Ja itse ihmettelin kanssa, miten se herjaa tuota utf-8 koko ajan. Varmistin myös ChatGPT:ltä, mikä voisi olla vikana tuossa rimpsussa ja se vastasi näin: "
+Näyttää siltä, että virhe liittyy Unicode-merkkien koodaukseen ja siitä aiheutuvaan ongelmaan, kun SaltStack yrittää hakea tietoja verkosta. Yksi mahdollinen syy tähän voisi olla, että SaltStackilla on vaikeuksia käsitellä tiettyjä merkistöjä tai että jokin verkkoasetus estää sen toiminnan."
+- Lähdimme tämän jälkeen selvittämään yhdessä ympäristömuuttujia, vaikka ratkaisu oli aivan nenän edessä jo kättelyssä. Ratkaisu on niin tyhmä ja nerokas samaan aikaan, etten tiedä, itkeäkkö vai nauraa.
+
+- Jälleen vastauksena kysymykseen ```set PYTHONIONENCODING=utf-8```toimimattomuuteen oli "Näyttää siltä, että virheesi liittyy edelleen Unicode-merkkien koodaukseen. Yleinen syy tähän voi olla se, että jokin järjestelmässäsi oleva merkkijono sisältää erikoismerkkejä, jotka eivät ole yhteensopivia UTF-8-koodauksen kanssa."
+
+- Tässä kohtaa tajusin, mistä tilanne nähtävästi johtuu. Vaihdoin läppärin nimestä pois Ä - kirjaimen. Olin siis yön pimeinä tunteina Windowsin Fresh-starttia tehdessäni keksinyt ovelan ja hienon nimen läppärilleni nimeltään "Läpsytin". Vaihoin nimen, otin ääkkösen pois, boottasin koneen ja TA-DAA:
+
+<img width="331" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/ca0e83f1-13d1-42db-8a43-4332080f0c55">
+
+- Poissuljen vielä sen, että kyseessä olisi ollut koneen uudelleenkäynnistyksellä hoituva korjaus: Tein varmuuden vuoksi sen 3 - kertaa ennen kyseistä ääkkösen poistoa. Tähän operaatioon meni yhteensä aikaa 3 - tuntia. Mietin jopa hetkellisesti sitä, ollaanko sitä ihan oikealle alalle menossa.
+
+- Homma jatkuu!
+
+```
+salt-call --local pkg.refresh_db
+```
+
+<img width="323" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/f6984bd6-c6a9-407e-a766-43caa99dfc91">
+
