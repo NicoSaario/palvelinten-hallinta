@@ -133,3 +133,16 @@ salt-call --local pkg.refresh_db
 
 <img width="323" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/f6984bd6-c6a9-407e-a766-43caa99dfc91">
 
+Nyt otan kyllä varman päälle ja teen tunniltakin tutun asennuksen:
+
+```
+salt-call --local state.single pkg.installed 'firefox_x64
+```
+
+Se meni läpi enkä itse asiassa sitä lähde edes poistamaan, koska satun sitä tarvitsemaan. 
+
+<img width="411" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/64eb4c8a-bc33-425d-81cc-5b0555d578a8">
+
+<img width="893" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/1e469cc7-199e-46af-a214-13061aa08a0e">
+
+
