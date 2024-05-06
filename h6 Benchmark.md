@@ -100,4 +100,5 @@ salt-call --local pkg.install "firefox_x64" version=74.0
 
 # a) Paketti Windowsia. Asenna Windowsiin tai Macciin ohjelmia Saltin pkg.installed -funktiolla.
 - Itse en näitä tunnilla päässyt tekemään Windowsin ongelmista johtuen, joten tässä testaillaan ensimmäistä kertaa
+- Asentelen Saltin Windowssille seuraavalta sivulta: https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/windows.html#install-salt-on-windows
 - 
