@@ -211,7 +211,8 @@ Päivittelen tätäkin tunnilla jahka nuo aivot vähän virkoavat.
 
 
 ### Lähteet
-Oma moduli, ottotoivanen: https://ottotoivanen.wordpress.com/2020/05/21/palvelinten-hallinta-h7/ (Luettu 7.05.2024)
-OMA-PROJEKTI-TILA, viivivepsalainen: https://github.com/viivivepsalainen/OMA-PROJEKTI-TILA?tab=readme-ov-file (Luettu 7.05.2024)
-GNU General Public License: https://www.gnu.org/licenses/gpl-3.0.html (Luettu 7.05.2024)
-ChatGPT
+- Oma moduli, ottotoivanen: https://ottotoivanen.wordpress.com/2020/05/21/palvelinten-hallinta-h7/ (Luettu 7.05.2024)
+- OMA-PROJEKTI-TILA, viivivepsalainen: https://github.com/viivivepsalainen/OMA-PROJEKTI-TILA?tab=readme-ov-file (Luettu 7.05.2024)
+- GNU General Public License: https://www.gnu.org/licenses/gpl-3.0.html (Luettu 7.05.2024)
+- ChatGPT
+- https://laracasts.com/discuss/channels/tips/vagrant-machine-index-corrupted-win-81-quick-fix
