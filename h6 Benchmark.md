@@ -201,7 +201,6 @@ Päivittelen tätäkin tunnilla jahka nuo aivot vähän virkoavat.
 
 
 
-v
 
 ### Lähteet
 Oma moduli, ottotoivanen: https://ottotoivanen.wordpress.com/2020/05/21/palvelinten-hallinta-h7/ (Luettu 7.05.2024)
