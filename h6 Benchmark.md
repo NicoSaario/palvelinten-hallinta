@@ -182,6 +182,12 @@ https://github.com/viivivepsalainen/OMA-PROJEKTI-TILA?tab=readme-ov-file
 
 https://ottotoivanen.wordpress.com/2020/05/21/palvelinten-hallinta-h7/
 
+### jorilinux h7 Oma moduuli
+* Ideana tehdä itelle kivat ohjelmat, jota tykkää käyttää - git, cmatrix, curl ja cowsay
+* Sama homma taas ton lisenssin kanssa
+* Tekijä Georgios Piperides vuonna 2020
+
+
 
 
 
