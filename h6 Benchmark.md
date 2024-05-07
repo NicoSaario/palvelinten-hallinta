@@ -194,6 +194,14 @@ https://jorilinux.wordpress.com/palvelinten-hallinta-viikkotehtava-7/
 # c) Testbench. Aja toisen tekemä tila.
 Olisin tämän vielä halunnut tehdä, mutta rapsan tekoaikaan 07/05/2024 kello 03.50 on pakko mennä nukkumaan, jotta ehtii aamu 8 tunnille oppimaan lisää. Olen noin puoltoista tehtävää tällä hetkellä jäljessä muista. Yritin aloittaa tekemisen valmiilla master-orja kombinaatiolla, mutta Vagrantti ilmoitti muutaman tiedoston olevan korruptoitunut. Poistin twohost - kansion, Vagrantfilen ja tein uudelleen, mutta sekään ei auttanut. Kokeilin sitä toisessa kansiossa ja vagrant up toimi vallan mainiosti, mutta kellon takia joutuu nyt jättämään leikin kesken tältäerää jälleen.
 
+<img width="469" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/8ab2fa35-a39d-48a8-af4a-cde7b6a923de">
+
+
+- Update: Korjaus https://laracasts.com/discuss/channels/tips/vagrant-machine-index-corrupted-win-81-quick-fix
+
+<img width="455" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/1ff3378b-47bc-49e9-b962-cc6038c38b9e">
+
+
 
 # d) Viisi ideaa. Listaa viisi ideaa omalle modulille, kurssin lopputehtävälle. Modulilla tulee olla tarkoistus. Sen ei tarvitse silti ratkaista mitään oikeaa liiketoiminnan ongelmaa, vaan tarkoitus voi olla keksitty. 
 
