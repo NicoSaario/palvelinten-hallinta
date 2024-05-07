@@ -209,7 +209,7 @@ Päivittelen tätäkin tunnilla jahka nuo aivot vähän virkoavat.
 
 1) Tunnilla tulleen 'speed-dating' - osion, jossa keskusteltiin parin kanssa ideoista, heittelin ilmaan ajatuksia siitä, kun näin jonkun hyödyntävän DigitalOeania herra-orja-arkkitektuurin muodossa ja mietin, että sehän olis erittäin tuotantoläheinen ratkaisumalli. Yksi kysymys on myös se, pystyykö VirtualBoxia hyödyntämään testaamisessa esimerkiksi Graafisiin käyttöliittymiin.
 
-2) Tässä lukuisten ongelmien kirjossa, jota itselleni näihin kahteen kurssiin on liittynyt aina vesivahingoista Windows - uudelleenasennuksiin ja siitä erilaisiin korruptoituneisiin tiedostoihin, mietin jotain valmista konfiguraatiota, jota voisin hyödyntää aina uuden koneen 'starttipakettiin'. Esimerkiksi Windows-ympäristön Fresh startti oli työläs erinäisten sovellusten ja pakettien asentamisen muodossa ja niiden pähkälemisessä, mitä sitä oikein tarvitsee.
+2) Tässä lukuisten ongelmien kirjossa, jota itselleni näihin kahteen kurssiin on liittynyt aina vesivahingoista Windows - uudelleenasennuksiin ja siitä erilaisiin korruptoituneisiin tiedostoihin, mietin jotain valmista konfiguraatiota, jota voisin hyödyntää aina uuden koneen 'starttipakettiin'. Esimerkiksi Windows-ympäristön Fresh startti oli työläs erinäisten sovellusten ja pakettien asentamisen muodossa ja niiden pähkälemisessä, mitä sitä oikein tarvitsee. - Niihin asetukset
 
 3) Yksi olisi myös tiedostojen siirtäminen/backupien tekeminen ja sit fresh startti, mutta se on kyl yks mysteeri vielä et miten se toimis käytännössä.. Tai sit livetikun säädöt
 
