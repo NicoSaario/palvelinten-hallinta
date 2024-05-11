@@ -33,8 +33,36 @@ Powershell + Vagrant
 
 - saltversion kaikessa lyhykäisyydessään tarkoittaa SaltStackin nykyistä versionumeroa
 
-- timezone: Se on tietokoneen aikavyöhyke, jonka itse asiassa jouduin aikaisemmin muuttamaan sen virheellisyydestä johtuen
+- timezone: Se on tietokoneen aikavyöhyke, jonka itse asiassa jouduin aikaisemmin muuttamaan sen virheellisyydestä johtuen. Siitä vahvistuu myös raportin aikavyöhyke
 
 - virtual: Tietokoneen tyyppi ja se, ollaanko virtuaalikoneessa vai fyysisessä. Kuten näkyy, ollaan fyysisellä tietokoneella.
   
-    
+## c) Kokeile Saltin file -toimintoa Windowsilla tai Macilla
+
+Teen testitiedoston seuraavalla komennolla:
+
+```
+salt-call --local -l info state.single file.managed /Users/NicoS/filetesti
+```
+
+- Kaiken järjen mukaan tiedosto pitäisi mennä kansioon /Users/NicoS
+
+<img width="435" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/4adf1139-b2d4-4f30-bc3f-22df077e32cf">
+
+Tarkistin vielä, että se tosiaan sieltä löytyy:
+
+<img width="273" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/7a1b479b-0467-48c3-9467-df2458c3a71a">
+
+Poistellaan se sieltä samantien, jotta ei tule myöhempään ihmeteltyä tuota turhaa tiedostoa:
+
+```
+salt-call --local -l info state.single file.absent /Users/NicoS/filetesti
+```
+
+<img width="404" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/4472f345-ecce-43e3-a348-2d7f033e4c87">
+
+Eikä myöskään näy enää tietokoneella. Toimii siis vallan mainiosti!
+
+## d) CSI Kerava. Näytä 'find' avulla viimeisimmäksi muokatut tiedostot /etc/-hakemistosta ja kotihakemistostasi. Selitä kaikki käyttämäsi parametrit ja format string 'man find' avulla.
+
+
