@@ -65,4 +65,21 @@ Eikä myöskään näy enää tietokoneella. Toimii siis vallan mainiosti!
 
 ## d) CSI Kerava. Näytä 'find' avulla viimeisimmäksi muokatut tiedostot /etc/-hakemistosta ja kotihakemistostasi. Selitä kaikki käyttämäsi parametrit ja format string 'man find' avulla.
 
+Ei mitään hajua, pitikö tämä tehdä Windowsilla vai Linuxilla, mutta siirryn vagrantille tekemään tämän Linux - ympäristöön, koska komennot ja polut ovat huomattavasti tutumpia. Tämä oli myös jäänyt tunnilla itseltäni käymättä, joten testailen Teron ohjeissa antamaa komentoa. 
 
+- Hyppäsin siis Vagranttiin, jossa olin jo tehnyt alkutoimenpiteet masterille ja kahdelle orjalle. Tässä kohtaa siirryn master - koneelle komennolla ```vagrant ssh```
+Kokeilen siis Teron läksyn ohjeissa antamaa komentoa ```find -printf '%T+ %p\n'|sort```. Koska loin vasta hiljattain nuo koneet, enkä muistaakseni siellä mitään ole tehnyt sekä nähdäkseni päivämäärät ovat vähän hujan hajan, teen testitiedoston kotihakemistoon ```mkdir -p näkyykötämätäällä```
+
+- find - komento näyttää seuraavan tulosteen: 
+
+<img width="299" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/9722d9a0-09bf-4907-adad-fe0c40d7c237">
+
+Tulkinta man find - komennon avulla:
+- printf tulostaa muotoillun tekstin ja tulkitsee merkkejä - jäsentää vasemmalle. Määrittää myös sen, että se tulkitaan oikein, jos etsitään dataa monilta käyttäjiltä ja ne sisältävät useita eri merkkejä, jotka tuottavat hankaluuksia
+- '%T+ %p rumakautta n'  T = aika, %p = Tiedoston nimi,  n = Uusi rivi
+- sort - järjestää sen
+
+## e) Komennus. Tee Salt-tila, joka asentaa järjestelmään uuden komennon.
+
+### Lähteet 
+https://github.com/NicklasHH/Palvelinten-hallinta/blob/master/h5%20Tekniikoita/h5%20Tekniikoita.md
