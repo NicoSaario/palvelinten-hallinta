@@ -28,9 +28,13 @@ Powershell + Vagrant
 
 - Eli siis:
     "master: salt" on Saltstackin master-palvelimen nimi ja palauttaa arvon "salt", joka tarkoittaa sitä palvelimen nimeä
+  
     osfullname on tietokoneen käyttöjärjestelmän koko nimi, tässä kohdassa "Microsoft Windows 11 Home"
+
     saltversion kaikessa lyhykäisyydessään tarkoittaa SaltStackin nykyistä versionumeroa
+
     timezone: Se on tietokoneen aikavyöhyke, jonka itse asiassa jouduin aikaisemmin muuttamaan sen virheellisyydestä johtuen
+
     virtual: Tietokoneen tyyppi ja se, ollaanko virtuaalikoneessa vai fyysisessä. Kuten näkyy, ollaan fyysisellä tietokoneella.
   
     
