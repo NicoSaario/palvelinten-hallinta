@@ -253,7 +253,8 @@ Ja sisään tismalleen samat:
 - Tämmönen virheilmoitus sieltä tuli: <img width="429" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/c728e70c-9788-41dd-b204-3e928a6576a7">
 
 - Olin laittanut sshd - tiedostot vahingossa väärään kansioon, src srv sijaan. Toinen ongelma: olin hypännyt ```sudo mkdir /srv/salt/apache``` - kohdan yli
-- 
+- init.sls - tiedostossa oli myös openssh-server, vaikka piti olla ssh-server
+- /etc/motd puuttui myös
 
 
 
