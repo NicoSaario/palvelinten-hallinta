@@ -88,5 +88,8 @@ Tulkinta man find - komennon avulla:
 sudo chmod ugo+x komentotesti.sh
 ```
 
+
+
+
 ### Lähteet 
 https://github.com/NicklasHH/Palvelinten-hallinta/blob/master/h5%20Tekniikoita/h5%20Tekniikoita.md
