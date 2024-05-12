@@ -247,9 +247,13 @@ Ja sisään tismalleen samat:
 
 <img width="571" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/66c8617a-e16c-41cf-acb5-1f70a16fbb36">
 
-- Nyt pitäs kaikki olla valmista ja tehdään vielä top.sls - tiedosto salttikansionn joka sit ajaa tilat minioneille
+- Nyt pitäs kaikki olla valmista ja tehdään vielä top.sls - tiedosto salttikansioon joka sit ajaa tilat minioneille
 - 
 
+- Tämmönen virheilmoitus sieltä tuli: <img width="429" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/c728e70c-9788-41dd-b204-3e928a6576a7">
+
+- Olin laittanut sshd - tiedostot vahingossa väärään kansioon, src srv sijaan. Toinen ongelma: olin hypännyt ```sudo mkdir /srv/salt/apache``` - kohdan yli
+- 
 
 
 
