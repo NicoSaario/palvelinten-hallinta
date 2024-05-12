@@ -237,7 +237,20 @@ Ja sisään tismalleen samat:
 
 - Vähän hämärää, miks tässä tehdään tuo php - modi, mutta eipä siinä näytä mitään ihmeellistä olevan. Perus komennot, jotka näyttävät CPU:n ja OS
 - Asentelen siis php ```sudo apt-get install php ```
+- Nyt hypättiin openssh-serveriin joka sekin on tehty Teron ohjeilla: https://terokarvinen.com/2018/pkg-file-service-control-daemons-with-salt-change-ssh-server-port/
+- Tehdään myös sitä varten uusi kansio ```sudo mkdir /srv/salt/sshd``` ja sinne init.sls -tiedosto sisälle
+
+<img width="433" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/a4f46e93-1a9a-4875-98ad-7b6246f90560">
+
+- Seuraavaksi luotiin /srv/salt/sshd_config - tiedosto, johon sisälle Teron valmiin ohjeen koodi. Tän seuraavan "Jinja - tiedoston" kohta jää vähän epäselväksi, mutta nopealla Googletuksella Jinjan sivuilta selviää, että se yksinkertaisesti on vain tekstitiedosto https://jinja.palletsprojects.com/en/3.0.x/templates/.
+- Kokeillaan siis samaan kansioon: micro jinja ja seuraava teksti sisään:
+
+<img width="571" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/66c8617a-e16c-41cf-acb5-1f70a16fbb36">
+
+- Nyt pitäs kaikki olla valmista ja tehdään vielä top.sls - tiedosto salttikansionn joka sit ajaa tilat minioneille
 - 
+
+
 
 
 
