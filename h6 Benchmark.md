@@ -203,6 +203,44 @@ Olisin tämän vielä halunnut tehdä, mutta rapsan tekoaikaan 07/05/2024 kello 
 
 UPDATE: Tässähän kävi siis niin, että noiden jälkeen Vagrant up - komennolla Windows heitti BSOD (Blue screen) joka ikisellä kerralla. Päädyin selvittämään tätäkin mukavaa vikaa, jolloin siihen meni taas muutama päivä aikaa. Ongelma ratkesi 10.05.2024, jolloin laitoin HyperV Windowsin asetuksista pois päältä, käynnistin koneen uudelleen, kokeilin - BSOD jälleen. Laitoin HyperV takaisin päälle, käynnistin koneen ja vagrant up toimi, mutta BSOD tuli ensimmäisen komennon jälkeen. Päättelin siis, että ongelma rinnastuu jollakin tavalla Oracle VM toimintaan ja koska HyperV teki pienen muutoksen, eipä ongelma hirveän kaukana voi olla..  Joten vedin Vagrantin kylmäksi, asensin sen uudelleen, poistin Oravle VM, asensin sen uudelleen ja tein varmuuden vuoksi Windowsin Troubleshoot - ominaisuudella Oracle VM version yhteensopivaksi Windowsin kanssa. En tarkistanut, tekikö se mitään muutoksia, mutta kaikki näytti toimivan. Ongelmaa selvitellessäni foorumeilta tuli usein kommentteja vastaan, jossa puhuttiin yhteensopivuuksista Oraclen ja Vagrantin/Windowsin välillä, joten päättelin sen olevan ratkaisu. Asentelin Windowssille päivitykset ja NYT ainakin hetkellisesti kaikki toimii. Koputellaan puuta. Tähänkin ongelmaan meni useampi päivä, sillä muitakin kursseja on eikä konetta voi ihan joka tunti räjäytellä sinisellä ruudulla.
 
+## Update: Uusi yritys
+
+Nyt näyttää kaikki toistaiseksi toimivan, joten lähden https://jorilinux.wordpress.com/palvelinten-hallinta-viikkotehtava-7/ moduulin kimppuun täysin voimin. 
+
+Tämä on siis yksinkertainen ja simppeli moduuli, jossa asennellaan omaan käyttöön ohjelmia, joita tykkää käyttää.
+
+Ohje menee kutakuinkin näi; asennetaan  muutama ohjelma: Git, cmatrix, curl ja cowsay. Luodaan salt - kansiolle "Ohjelmat" - niminen kansio, johon tulee init.sls sisään.
+
+- Saltti on jo asennettu valmiiksi kotitehtävien aikana, joten hypätään suoraan "Ohjelmat" kansion luomiseen ja init.sls - tiedoston tekemiseen
+- Vähän raportista poiketen, kerron lisävaiheet myös
+- Eli navigointi srv/salt - kansioon ja sinne sisään Ohjelmat - kansio, johon init.sls
+
+```
+cd /srv/salt/
+```
+
+```
+sudo mkdir -p Ohjelmat
+```
+
+```
+micro init.sls
+```
+
+Ja sisään tismalleen samat:
+
+<img width="851" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/61bcfad2-fe39-4106-8ead-5ffccef32397">
+
+- Seuraavaksi Apachelle kansio, johon Moduuli.html - tiedosto ja pieni pätkä tekstiä
+
+<img width="437" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/68c7e9c5-9b3b-4d18-9d2f-5a122f381906">
+
+- Vähän hämärää, miks tässä tehdään tuo php - modi, mutta eipä siinä näytä mitään ihmeellistä olevan. Perus komennot, jotka näyttävät CPU:n ja OS
+- Asentelen siis php ```sudo apt-get install php ```
+- 
+
+
+
 # d) Viisi ideaa. Listaa viisi ideaa omalle modulille, kurssin lopputehtävälle. Modulilla tulee olla tarkoistus. Sen ei tarvitse silti ratkaista mitään oikeaa liiketoiminnan ongelmaa, vaan tarkoitus voi olla keksitty. 
 
 Päivittelen tätäkin tunnilla jahka nuo aivot vähän virkoavat.
