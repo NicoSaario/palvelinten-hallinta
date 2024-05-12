@@ -75,11 +75,18 @@ Kokeilen siis Teron läksyn ohjeissa antamaa komentoa ```find -printf '%T+ %p\n'
 <img width="299" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/9722d9a0-09bf-4907-adad-fe0c40d7c237">
 
 Tulkinta man find - komennon avulla:
+- Kuvassa näkyy siis myös se hetki, kun kansio sinne ilmestyi
 - printf tulostaa muotoillun tekstin ja tulkitsee merkkejä - jäsentää vasemmalle. Määrittää myös sen, että se tulkitaan oikein, jos etsitään dataa monilta käyttäjiltä ja ne sisältävät useita eri merkkejä, jotka tuottavat hankaluuksia
 - '%T+ %p rumakautta n'  T = aika, %p = Tiedoston nimi,  n = Uusi rivi
 - sort - järjestää sen
 
 ## e) Komennus. Tee Salt-tila, joka asentaa järjestelmään uuden komennon.
+- Lisään komennon Teron ohjeiden mukaan /usr/bin/ - hakemistoon
+- Suoritan komennon, jolla jaetaan myös oikeudet kaikille
+
+```
+sudo chmod ugo+x komentotesti.sh
+```
 
 ### Lähteet 
 https://github.com/NicklasHH/Palvelinten-hallinta/blob/master/h5%20Tekniikoita/h5%20Tekniikoita.md
