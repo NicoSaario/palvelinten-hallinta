@@ -9,6 +9,18 @@ Aika: Itä-Euroopan normaaliaika Aikavyöhyke: Suomi (UTC+2) 12/05/2024 (pvm/kk/
 
 Powershell + Vagrant
 
+## x) Lue ja tiivistä. (Tässä x-alakohdassa ei tarvitse tehdä testejä tietokoneella, vain lukeminen tai kuunteleminen ja tiivistelmä riittää. Tiivistämiseen riittää muutama ranskalainen viiva.)
+Vapaavalintainen aiemman vuoden kotitehtäväraportti Saltin käytöstä Windowsilla. Löydät raportteja esimerkiksi Google tai Duck-haulla: salt windows karvinen.
+
+Löysin Kristiina Kumila Viikko 6: Windows - tehtäväpalautuksen raportin, jossa käytetään Salttia Windowsilla: https://kristiinakumila.wordpress.com/2021/05/08/viikko-6-windows/
+
+- Windowsilla uusin versio Saltista
+- Samassa verkossa herra ja jokanen orja samaan verkkoon
+- Raportissa asennellaan Saltti, päivitys uusimpaan versioon
+- Jo Saltin Graafisessa asennuksessa voi syöttää Masterin IP
+- Oikeudet kaikille kaikkeen ```sudo chmod ug+rwx /srv/salt/win/``` (En vaan oikeen ymmärrä, että Miksi? Aa.. Tässä on käynyt varmaan niin, että asentaja sekoitti olevansa kirjautunut jo root - käyttäjälle eikä siis oikeuksia olisi tarvinnut antaa kansion käyttämiseen..? Muistaakseni Salttiin ei erikseen roottia määritellä)
+- ```sudo salt '*' state.apply```
+- Ajaa tilan, jolla esimerkiksi init.sls ohjelmien asennuksen voi suorittaa
 
 ## a) Asenna Salt Windowsille tai Macille. Osoita 'salt-call --local' komentoa ajamalla, että asennus on onnistunut. (Jos olet asentanut jo aiemmin, tässä riittää pelkkä asennuksen testaaminen, eikä asennusta tarvitse tehdä uudelleen.)
 - Tehtävä itsessään aika yksiselitteinen ja niin on ratkaisukin; Asensin Saltin H6 tehtävää varten, koska se oli prioriteetti silloisiin kotitehtäviin. Kaikki siihen liittyvä materiaali löytyy täältä:
@@ -82,14 +94,25 @@ Tulkinta man find - komennon avulla:
 
 ## e) Komennus. Tee Salt-tila, joka asentaa järjestelmään uuden komennon.
 - Lisään komennon Teron ohjeiden mukaan /usr/bin/ - hakemistoon
-- Suoritan komennon, jolla jaetaan myös oikeudet kaikille
 
-```
-sudo chmod ugo+x komentotesti.sh
-```
+- Vähän hakuammuntaa, mutta laitan seuraavasti: ```usr/bin/bash echo 'HeisunHei'```
+  
+- Kokeilen ´´´#!usr/bin/bash```
 
+  <img width="327" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/0896c545-df0c-4c20-9036-affa5aba3f54">
 
+Ilmeisesti toimi, koska HeisunHei palautui
 
+En kuitenkaan tätä osaa tehdä
 
 ### Lähteet 
-https://github.com/NicklasHH/Palvelinten-hallinta/blob/master/h5%20Tekniikoita/h5%20Tekniikoita.md
+
+Kristiina Kumila (2021) https://kristiinakumila.wordpress.com/2021/05/08/viikko-6-windows/ (luettu 12.05.2024)
+
+https://github.com/NicklasHH/Palvelinten-hallinta/blob/master/h5%20Tekniikoita/h5%20Tekniikoita.md (luettu 12.05.2024)
+
+Karvinen(2024) https://terokarvinen.com/2024/configuration-management-2024-spring/ (luettu 12.05.2024)
+
+Omat repot
+
+Saltin manuaali 'man find'
