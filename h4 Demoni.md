@@ -671,11 +671,13 @@ Erroria jälleen
 sudo salt-call --local state.apply sshd
 ```
 
+Lopulta se toimi!
+
 <img width="332" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/62660fd5-ed3a-4add-b655-4889d0692cab">
 
 <img width="446" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/e1bf4a3e-ad03-4bce-a121-ad8f3051bcc9">
 
-- Mutta eipä vieläkään tuo testaus toimi
+
 
 
 ### Lähteet: 
