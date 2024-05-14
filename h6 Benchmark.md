@@ -259,6 +259,9 @@ Ja sisään tismalleen samat:
 - Valitettavasti tästä loppui aika kesken
 
 
+- Update: Yritin 14.05.2024 vielä uudelleen kaikki kolme raporttia tehdä itse, mutta jokaisesta ohjeesta puuttui jotain oleellista enkä saanut mitään niistä toimimaan. Piti laittaa tähän lopputulos asennuksista, mutta pieleen se meni. 
+
+
 
 
 # d) Viisi ideaa. Listaa viisi ideaa omalle modulille, kurssin lopputehtävälle. Modulilla tulee olla tarkoistus. Sen ei tarvitse silti ratkaista mitään oikeaa liiketoiminnan ongelmaa, vaan tarkoitus voi olla keksitty. 
