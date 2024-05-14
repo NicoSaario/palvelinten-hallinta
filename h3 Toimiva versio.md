@@ -183,6 +183,52 @@ sudo salt-call --local --file-root srv/salt/testisuola state.apply
 - En kuitenkaan saa mitään järkevää vastausta ja toistaiseksi tehtävä päättyy osaltani siihen. Mietin, tarviiko nyt luoda uusi kone ja tehdä myös slave, mutta tarvii tähän kyllä perehtyä lisää..
 
 
+- Edit: 14.05.2024 klo 06.48
+- Tää tehtävä menee vähän nyt uusiksi. Replikoin vähän kuitenkin.
+
+```
+sudo mkdir srv/salt/; cd srv/salt/
+sudo mkdir varasto
+cd varasto/
+micro init.sls
+```
+
+sisään:
+```
+/tmp/ajellaanvarastoja:
+  file.managed
+```
+```
+cd ..
+micro top.sls
+```
+sisään: 
+
+```
+base:
+  '*':
+    - varasto
+    - testisuola
+```
+
+```
+sudo mkdir testisuola; cd testisuola/
+micro init.sls
+```
+sisään:
+
+```
+Installation:
+  pkg.installed:
+    - pkgs:
+      - micro
+```
+
+Lopputulos:
+
+<img width="423" alt="image" src="https://github.com/NicoSaario/palvelinten-hallinta/assets/156778628/ca2ff33e-fcf0-4a4e-b7d7-9b61b1f8b94c">
+
+
 ### Lähteet
 1) Pro Git Book, by Scorr Chacon and Ben Straub:  https://git-scm.com/book/en/v2 (luettu 15/04/2024)
 2) 1.3 Getting Started - What is Git?: https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F (luettu 15/04/2024)
