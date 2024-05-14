@@ -256,6 +256,8 @@ Ja sisään tismalleen samat:
 - init.sls - tiedostossa oli myös openssh-server, vaikka piti olla ssh-server
 - /etc/motd puuttui myös
 
+- Valitettavasti tästä loppui aika kesken
+
 
 
 
