@@ -6,7 +6,7 @@ a) Vapaaehtoinen: Parannus: Luettele ja linkitä tehtävät, joihin olet tehnyt 
 Olennaiset parannukset tein H6 - tehtävään, jossa en palautukseen ehtinyt tekemään jonkun toista moduulia. Valitettavasti nytkään yksikään kokeilemani moduuli ei toiminut. Yritin kuitenkin vaiheittain ne tehdä ja ensimmäisestä niistä raportointi!
 https://github.com/NicoSaario/palvelinten-hallinta/blob/main/h6%20Benchmark.md
 
-H4 tein pienen korjauksen loppua kohden, jossa oli onnistunut ajo
+H4 tein käytännössä melkein kokonaan uudelleen palautuksen jälkeen, sillä koneen temppuilemisen johdosta tehtävä jäi pahasti tuolloin kesken
 https://github.com/NicoSaario/palvelinten-hallinta/blob/main/h4%20Demoni.md
 
 Palautuksen jälkeen muokkailin myös hieman H7 oma-projektia helpommin luettavaksi, jotta lisenssi ja nimi näkyy heti
